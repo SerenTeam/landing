@@ -4,8 +4,8 @@
 
 ## C'est quoi
 Landing page + blog de Seren, assistant digital post-décès français.
-Stack : Next.js 14 App Router, Tailwind CSS, TypeScript, MDX local.
-Déployé sur Vercel : seren-landing.vercel.app
+Stack : Next.js 16 App Router, Tailwind CSS v4, TypeScript, MDX local.
+Déployé sur Netlify via @netlify/plugin-nextjs (netlify.toml à la racine du projet).
 
 ## Palette couleurs (non négociable)
 - Primary : #2E7D80 (teal sage)
