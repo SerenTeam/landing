@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* Primary */
+  --color-primary:        #006BFA;
+  --color-primary-hover:  #0057D0;
+  --color-primary-light:  #EAF3FE;
+  --color-primary-border: #B5D4F4;
+
+  /* Backgrounds */
+  --color-page-bg:   #F8F8F8;
+  --color-white:     #FFFFFF;
+  --color-surface:   #FAFAFA;
+
+  /* Text */
+  --color-text:          #1D1D1D;
+  --color-text-heading:  #333333;
+  --color-text-secondary:#42424A;
+  --color-text-muted:    #666676;
+
+  /* Borders */
+  --color-border:        #D9DBE0;
+  --color-border-card:   #F2F0FF;
+
+  /* Fonts */
+  --font-sans:    var(--font-inter);
+  --font-display: var(--font-inter-display);
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #1D1D1D;
+  font-family: var(--font-inter), sans-serif;
+}
