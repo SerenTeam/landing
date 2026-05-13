@@ -1,8 +1,8 @@
 const GITHUB_API = 'https://api.github.com';
-const OWNER = process.env.GITHUB_OWNER!;
-const REPO = process.env.GITHUB_REPO!;
-const BRANCH = process.env.GITHUB_BRANCH ?? 'main';
-const TOKEN = process.env.GITHUB_TOKEN!;
+const OWNER = process.env.SEREN_GITHUB_OWNER!;
+const REPO = process.env.SEREN_GITHUB_REPO!;
+const BRANCH = process.env.SEREN_GITHUB_BRANCH ?? 'main';
+const TOKEN = process.env.SEREN_GITHUB_TOKEN!;
 
 function headers() {
   return {
