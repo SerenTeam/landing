@@ -1,7 +1,6 @@
 [build]
   command = "npm run build"
   publish = ".next"
-  environment = ["ADMIN_IDENTIFIER", "ADMIN_SECRET", "SEREN_GITHUB_OWNER", "SEREN_GITHUB_REPO", "SEREN_GITHUB_BRANCH", "SEREN_GITHUB_TOKEN"]
-
+  
 [[plugins]]
   package = "@netlify/plugin-nextjs"
