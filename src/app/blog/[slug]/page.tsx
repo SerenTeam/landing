@@ -80,34 +80,46 @@ export default async function BlogPostPage({
           {/* MDX content */}
           <div className="
             prose prose-lg max-w-none
-            prose-headings:font-semibold prose-headings:text-[#1A2E35] prose-headings:leading-snug
+            prose-headings:font-normal prose-headings:text-[#1D1D1D] prose-headings:leading-snug
             prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
             prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-            prose-p:text-[#4A6572] prose-p:leading-relaxed prose-p:mt-0 prose-p:mb-5
-            prose-a:text-[#2E7D80] prose-a:font-medium prose-a:no-underline hover:prose-a:underline
-            prose-strong:text-[#1A2E35] prose-strong:font-semibold
+            prose-p:text-[#666676] prose-p:leading-relaxed prose-p:mt-0 prose-p:mb-5
+            prose-a:text-[#006BFA] prose-a:font-medium prose-a:no-underline hover:prose-a:underline
+            prose-strong:text-[#1D1D1D] prose-strong:font-semibold
             prose-ul:my-5 prose-ol:my-5
-            prose-li:text-[#4A6572] prose-li:my-1
-            prose-blockquote:border-l-[#2E7D80] prose-blockquote:text-[#4A6572] prose-blockquote:not-italic
-            prose-hr:border-[#EEF4F2] prose-hr:my-10
+            prose-li:text-[#666676] prose-li:my-1
+            prose-blockquote:border-l-[#006BFA] prose-blockquote:text-[#42424A] prose-blockquote:not-italic
+            prose-hr:border-[#D9DBE0] prose-hr:my-10
             prose-img:rounded-xl prose-img:shadow-md
           ">
             <MDXRemote source={article.content} />
           </div>
 
           {/* CTA Seren */}
-          <div className="mt-16 rounded-2xl bg-primary-dark p-8 flex flex-col md:flex-row items-start md:items-center gap-6">
+          <div
+            style={{ marginTop: "64px", borderRadius: "32px", backgroundColor: "#1D1D1D", padding: "32px" }}
+            className="flex flex-col md:flex-row items-start md:items-center gap-6"
+          >
             <div className="flex-1">
-              <p className="text-white font-semibold text-lg mb-1">
+              <p style={{ fontFamily: "var(--font-inter-display)", fontSize: "18px", fontWeight: 500, color: "#FFFFFF", marginBottom: "4px" }}>
                 Prêt à commencer vos démarches ?
               </p>
-              <p className="text-white/60 text-sm leading-relaxed">
+              <p style={{ fontFamily: "var(--font-inter-display)", fontSize: "15px", fontWeight: 500, color: "rgba(255,255,255,0.6)", lineHeight: 1.55 }}>
                 Seren vous accompagne pas à pas, à votre rythme.
               </p>
             </div>
             <a
-              href="//inscription"
-              className="flex-shrink-0 rounded-full bg-primary-light px-6 py-3 text-sm font-semibold text-white hover:bg-primary transition-colors"
+              href="/inscription"
+              className="flex-shrink-0 inline-flex items-center justify-center whitespace-nowrap rounded-[128px] bg-[#006BFA] hover:bg-[#0057D0] transition-colors"
+              style={{
+                fontFamily: "var(--font-inter-display)",
+                fontSize: "16px",
+                fontWeight: 500,
+                color: "#FFFFFF",
+                height: "42px",
+                padding: "0 24px",
+                textDecoration: "none",
+              }}
             >
               Commencer gratuitement
             </a>
