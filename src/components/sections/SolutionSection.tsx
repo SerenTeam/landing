@@ -8,7 +8,7 @@ const steps = [
     ),
     title: "Dites-nous ce qui s'est passé",
     description:
-      "En quelques questions simples, Seren comprend votre situation et identifie toutes les démarches qui vous concernent — et seulement celles-là.",
+      "En quelques questions simples, Seren comprend votre situation et identifie toutes les démarches qui vous concernent, et seulement celles-là.",
   },
   {
     number: "02",

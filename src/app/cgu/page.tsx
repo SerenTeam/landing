@@ -1,7 +1,7 @@
 import LegalLayout from "@/components/layout/LegalLayout";
 
 export const metadata = {
-  title: "Conditions Générales d'Utilisation — Seren",
+  title: "Conditions Générales d'Utilisation | Seren",
   description: "Conditions générales d'utilisation du service Seren.",
   alternates: {
     canonical: "/cgu",

@@ -45,14 +45,14 @@ export async function POST(request: NextRequest) {
   const expectedId = process.env.ADMIN_IDENTIFIER;
   const expectedPwd = process.env.ADMIN_SECRET;
 
-  // Vérification côté serveur — rien n'est exposé au client
+  // Vérification côté serveur, rien n'est exposé au client
   if (
     !identifier ||
     !password ||
     identifier !== expectedId ||
     password !== expectedPwd
   ) {
-    // Message générique — ne pas préciser ce qui est faux
+    // Message générique, ne pas préciser ce qui est faux
     return NextResponse.json({ error: 'Identifiants incorrects.' }, { status: 401 });
   }
 

@@ -7,7 +7,7 @@ import Footer from "@/components/layout/Footer";
 export const revalidate = 3600;
 
 export const metadata = {
-  title: "Blog — Seren",
+  title: "Blog | Seren",
   description:
     "Guides pratiques et conseils pour traverser les démarches administratives après la perte d'un proche.",
   alternates: {

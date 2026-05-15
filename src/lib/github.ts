@@ -13,7 +13,7 @@ function headers() {
   };
 }
 
-// Lire un fichier — retourne { content, sha } ou null si absent
+// Lire un fichier : retourne { content, sha } ou null si absent
 export async function getFile(
   path: string,
 ): Promise<{ content: string; sha: string } | null> {
@@ -65,7 +65,7 @@ export async function deleteFile(path: string, message: string): Promise<void> {
   if (!res.ok) throw new Error(`GitHub deleteFile ${res.status}: ${await res.text()}`);
 }
 
-// Lister les fichiers d'un dossier — retourne [] si absent
+// Lister les fichiers d'un dossier : retourne [] si absent
 export async function listFiles(path: string): Promise<string[]> {
   const res = await fetch(
     `${GITHUB_API}/repos/${OWNER}/${REPO}/contents/${path}?ref=${BRANCH}`,

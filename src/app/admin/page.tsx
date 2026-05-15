@@ -320,7 +320,7 @@ function BlockRow({
         )}
       </div>
       <div className="flex flex-col gap-1 flex-shrink-0">
-        {/* Transformer en — non disponible pour image */}
+        {/* Transformer en : non disponible pour image */}
         {block.type !== 'image' && (
           <div className="relative" ref={menuRef}>
             <button
@@ -671,8 +671,8 @@ export default function AdminPage() {
                         </span>
                       )}
                     </div>
-                    <p className="text-xs text-[#6B8A85] mb-2">/blog/{article.slug} · {article.readTime || '—'} · {
-                      article.date ? new Date(article.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }) : '—'
+                    <p className="text-xs text-[#6B8A85] mb-2">/blog/{article.slug} · {article.readTime || 'N/A'} · {
+                      article.date ? new Date(article.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }) : 'N/A'
                     }</p>
                     <p className="text-sm text-[#6B8A85] leading-relaxed line-clamp-2">{article.excerpt}</p>
                   </div>
@@ -804,7 +804,7 @@ export default function AdminPage() {
               </button>
               {importSuccess && (
                 <p className="text-xs text-[#2E7D80] bg-[#EEF4F2] rounded-lg px-2 py-1.5">
-                  Fichier importé — vérifiez les blocs avant de publier
+                  Fichier importé. Vérifiez les blocs avant de publier.
                 </p>
               )}
 

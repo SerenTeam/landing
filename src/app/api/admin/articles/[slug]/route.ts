@@ -12,7 +12,7 @@ function safeSlug(slug: string): string {
   return slug.replace(/[^a-z0-9-]/g, '');
 }
 
-// GET /api/admin/articles/[slug] — contenu complet pour l'édition
+// GET /api/admin/articles/[slug] : contenu complet pour l'édition
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ slug: string }> },
@@ -34,7 +34,7 @@ export async function GET(
   }
 }
 
-// DELETE /api/admin/articles/[slug] — suppression du fichier MDX
+// DELETE /api/admin/articles/[slug] : suppression du fichier MDX
 export async function DELETE(
   request: NextRequest,
   { params }: { params: Promise<{ slug: string }> },

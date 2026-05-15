@@ -1,4 +1,4 @@
-// Utilitaire de session — compatible Edge runtime (pas de Buffer, pas de crypto Node)
+// Utilitaire de session, compatible Edge runtime (pas de Buffer, pas de crypto Node)
 
 export const SESSION_COOKIE = 'seren_session';
 export const SESSION_MAX_AGE = 60 * 60 * 24 * 7; // 7 jours

@@ -54,7 +54,7 @@ export default function Hero() {
             }}
           >
             Seren vous guide pas à pas dans toutes les démarches après la perte
-            d'un proche — dans le bon ordre, avec les bons mots, sans vous laisser seul.
+            d'un proche, dans le bon ordre, avec les bons mots, sans vous laisser seul.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-2">
@@ -128,7 +128,7 @@ export default function Hero() {
               lineHeight: 1.6,
             }}
           >
-            {/* invisible on white bg — shown on dark hero variant */}
+            {/* invisible on white bg, shown on dark hero variant */}
           </p>
           <p
             style={{
@@ -156,7 +156,7 @@ export default function Hero() {
               }}
             />
 
-            {/* Card 1 — tâche complétée */}
+            {/* Card 1 : tâche complétée */}
             <div
               style={{
                 position: "absolute",
@@ -192,7 +192,7 @@ export default function Hero() {
               <p style={{ fontSize: "12px", color: "#666676", marginTop: "6px", fontFamily: "var(--font-inter-display)", fontWeight: 500 }}>Complété</p>
             </div>
 
-            {/* Card 2 — en cours */}
+            {/* Card 2 : en cours */}
             <div
               style={{
                 position: "absolute",
@@ -228,7 +228,7 @@ export default function Hero() {
               <p style={{ fontSize: "12px", color: "#666676", marginTop: "6px", fontFamily: "var(--font-inter-display)", fontWeight: 500 }}>En cours</p>
             </div>
 
-            {/* Card 3 — prochaine étape */}
+            {/* Card 3 : prochaine étape */}
             <div
               style={{
                 position: "absolute",

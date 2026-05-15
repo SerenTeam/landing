@@ -1,7 +1,7 @@
 import LegalLayout from "@/components/layout/LegalLayout";
 
 export const metadata = {
-  title: "Mentions légales — Seren",
+  title: "Mentions légales | Seren",
   description: "Mentions légales de Seren, assistant numérique pour les démarches post-décès.",
   alternates: {
     canonical: "/mentions-legales",

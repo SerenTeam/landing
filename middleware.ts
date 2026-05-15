@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { SESSION_COOKIE, validateSessionToken } from '@/lib/session';
 
 export const config = {
-  // Protège uniquement les API admin — /admin est géré par sa propre modale
+  // Protège uniquement les API admin ; /admin est géré par sa propre modale
   matcher: ['/api/admin/:path*'],
 };
 

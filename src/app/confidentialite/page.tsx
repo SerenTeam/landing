@@ -1,7 +1,7 @@
 import LegalLayout from "@/components/layout/LegalLayout";
 
 export const metadata = {
-  title: "Politique de confidentialité — Seren",
+  title: "Politique de confidentialité | Seren",
   description: "Comment Seren collecte, utilise et protège vos données personnelles.",
   alternates: {
     canonical: "/confidentialite",
@@ -33,7 +33,7 @@ export default function ConfidentialitePage() {
         </li>
         <li>
           <strong>Données de navigation :</strong> adresse IP, type de navigateur, pages visitées,
-          durée de session — collectées via des outils d'analyse anonymisés (Microsoft Clarity).
+          durée de session, collectées via des outils d'analyse anonymisés (Microsoft Clarity).
         </li>
         <li>
           <strong>Données liées à l'utilisation du service :</strong> informations que vous
@@ -77,7 +77,7 @@ export default function ConfidentialitePage() {
       </p>
       <p>Sous-traitants principaux :</p>
       <ul>
-        <li><strong>Netlify</strong> (hébergement) — États-Unis, couvert par les clauses contractuelles types de la Commission européenne.</li>
+        <li><strong>Netlify</strong> (hébergement) : États-Unis, couvert par les clauses contractuelles types de la Commission européenne.</li>
       </ul>
 
       <h2>7. Sécurité</h2>
@@ -107,7 +107,7 @@ export default function ConfidentialitePage() {
       </p>
       <p>
         Vous disposez également du droit d'introduire une réclamation auprès de la{" "}
-        <strong>CNIL</strong> (Commission Nationale de l'Informatique et des Libertés) —{" "}
+        <strong>CNIL</strong> (Commission Nationale de l'Informatique et des Libertés) :{" "}
         <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">www.cnil.fr</a>.
       </p>
 

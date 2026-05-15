@@ -19,7 +19,7 @@ export async function generateMetadata({
   const article = getArticleBySlug(slug);
   if (!article) return {};
   return {
-    title: `${article.title} — Seren`,
+    title: `${article.title} | Seren`,
     description: article.excerpt,
     alternates: {
       canonical: `/blog/${article.slug}`,
