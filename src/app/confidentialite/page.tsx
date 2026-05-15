@@ -3,6 +3,9 @@ import LegalLayout from "@/components/layout/LegalLayout";
 export const metadata = {
   title: "Politique de confidentialité — Seren",
   description: "Comment Seren collecte, utilise et protège vos données personnelles.",
+  alternates: {
+    canonical: "/confidentialite",
+  },
 };
 
 export default function ConfidentialitePage() {

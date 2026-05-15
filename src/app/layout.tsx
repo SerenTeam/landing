@@ -18,9 +18,13 @@ const interDisplay = Inter_Tight({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://seren-app.fr"),
   title: "Seren — Votre guide pour les démarches après une perte",
   description:
     "Seren vous accompagne pas à pas dans toutes les démarches administratives après la perte d'un proche. Clair, humain, apaisant.",
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: "/logo-bubble.svg",
     shortcut: "/logo-bubble.svg",

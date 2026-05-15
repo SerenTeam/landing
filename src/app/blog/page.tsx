@@ -10,6 +10,9 @@ export const metadata = {
   title: "Blog — Seren",
   description:
     "Guides pratiques et conseils pour traverser les démarches administratives après la perte d'un proche.",
+  alternates: {
+    canonical: "/blog",
+  },
 };
 
 function formatDate(dateStr: string) {
