@@ -27,7 +27,7 @@ export default function Footer() {
             <Link href="/blog" style={{ fontSize: "14px", color: "rgba(255,255,255,0.6)", textDecoration: "none" }} className="hover:text-white transition-colors">
               Blog
             </Link>
-            <a href="/inscription" style={{ fontSize: "14px", color: "rgba(255,255,255,0.6)", textDecoration: "none" }} className="hover:text-white transition-colors">
+            <a href="/inscription" data-cta-label="Inscription sur la plateforme" style={{ fontSize: "14px", color: "rgba(255,255,255,0.6)", textDecoration: "none" }} className="hover:text-white transition-colors">
               Commencer
             </a>
           </div>

@@ -48,6 +48,7 @@ export default function CTASection() {
           {/* Primary */}
           <a
             href="/inscription"
+            data-cta-label="Inscription sur la plateforme"
             style={{
               fontFamily: "var(--font-inter-display)",
               fontSize: "18px",

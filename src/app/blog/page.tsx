@@ -177,6 +177,7 @@ export default function BlogPage() {
             </p>
             <a
               href="/inscription"
+              data-cta-label="Inscription sur la plateforme"
               style={{
                 fontFamily: "var(--font-inter-display)",
                 fontSize: "17px",
