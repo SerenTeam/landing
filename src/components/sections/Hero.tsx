@@ -61,7 +61,8 @@ export default function Hero() {
             {/* Primary CTA */}
             <a
               href="/inscription"
-              data-cta-label="Inscription sur la plateforme"
+              data-cta-label="Inscription"
+              data-cta-position="hero"
               style={{
                 fontFamily: "var(--font-inter-display)",
                 fontSize: "18px",

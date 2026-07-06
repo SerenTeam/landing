@@ -113,7 +113,8 @@ export default async function BlogPostPage({
             </div>
             <a
               href="/inscription"
-              data-cta-label="Inscription sur la plateforme"
+              data-cta-label="Inscription"
+              data-cta-position="article"
               className="flex-shrink-0 inline-flex items-center justify-center whitespace-nowrap rounded-[128px] bg-[#006BFA] hover:bg-[#0057D0] transition-colors"
               style={{
                 fontFamily: "var(--font-inter-display)",

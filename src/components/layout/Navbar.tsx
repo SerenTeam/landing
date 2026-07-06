@@ -65,7 +65,8 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-6">
           <a
             href="/inscription"
-            data-cta-label="Inscription sur la plateforme"
+            data-cta-label="Connexion"
+            data-cta-position="header"
             style={{
               fontFamily: "var(--font-inter)",
               fontSize: "16px",
@@ -81,7 +82,8 @@ export default function Navbar() {
           </a>
           <a
             href="/inscription"
-            data-cta-label="Inscription sur la plateforme"
+            data-cta-label="Inscription"
+            data-cta-position="header"
             style={{
               fontFamily: "var(--font-inter-display)",
               fontSize: "16px",
@@ -140,7 +142,8 @@ export default function Navbar() {
           </Link>
           <a
             href="/inscription"
-            data-cta-label="Inscription sur la plateforme"
+            data-cta-label="Inscription"
+            data-cta-position="header"
             onClick={() => setOpen(false)}
             style={{
               fontFamily: "var(--font-inter-display)",
