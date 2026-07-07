@@ -8,6 +8,10 @@
   --color-primary-light:  #EAF3FE;
   --color-primary-border: #B5D4F4;
 
+  /* Accent (étapes en cours / variante violette, utilisée dans Hero + SolutionSection) */
+  --color-violet:       #6B5CE7;
+  --color-violet-light: #F2F0FF;
+
   /* Backgrounds */
   --color-page-bg:   #F8F8F8;
   --color-white:     #FFFFFF;
@@ -19,6 +23,9 @@
   --color-text-secondary:#42424A;
   --color-text-muted:    #666676;
 
+  /* Ink : même valeur que --color-text, utilisée comme fond des sections sombres (CTA) */
+  --color-ink: #1D1D1D;
+
   /* Borders */
   --color-border:        #D9DBE0;
   --color-border-card:   #F2F0FF;
@@ -26,6 +33,14 @@
   /* Fonts */
   --font-sans:    var(--font-inter);
   --font-display: var(--font-inter-display);
+
+  /* Radius */
+  --radius-card: 2rem;
+
+  /* Shadows (issues du Figma, utilisées par toutes les cards) */
+  --shadow-card:        0px 0.6px 0.6px -1.25px rgba(181,181,181,0.07), 0px 2.3px 2.3px -2.5px rgba(181,181,181,0.06), 0px 10px 10px -3.75px rgba(181,181,181,0.03), 0px 2px 4px 0px rgba(79,79,79,0.08);
+  --shadow-card-border: 0px 0.36px 0.36px -1.25px rgba(135,126,135,0.18), 0px 1.37px 1.37px -2.5px rgba(135,126,135,0.16), 0px 6px 6px -3.75px rgba(135,126,135,0.06);
+  --shadow-pill:        0px 0.6px 0.6px -1.25px rgba(0,0,0,0.18), 0px 2.3px 2.3px -2.5px rgba(0,0,0,0.16), 0px 10px 10px -3.75px rgba(0,0,0,0.06);
 }
 
 body {

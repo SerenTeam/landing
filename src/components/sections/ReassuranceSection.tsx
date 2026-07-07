@@ -1,7 +1,11 @@
+import Container from "@/components/ui/Container";
+import IconBadge from "@/components/ui/IconBadge";
+import SectionHeading from "@/components/ui/SectionHeading";
+
 const stats = [
   {
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#006BFA" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
       </svg>
     ),
@@ -11,7 +15,7 @@ const stats = [
   },
   {
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#006BFA" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" />
       </svg>
     ),
@@ -21,7 +25,7 @@ const stats = [
   },
   {
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#006BFA" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" />
       </svg>
     ),
@@ -46,117 +50,57 @@ const testimonials = [
   },
 ];
 
-const shadowCard = "0px 0.6px 0.6px -1.25px rgba(181,181,181,0.07), 0px 2.3px 2.3px -2.5px rgba(181,181,181,0.06), 0px 10px 10px -3.75px rgba(181,181,181,0.03), 0px 2px 4px 0px rgba(79,79,79,0.08)";
-
 export default function ReassuranceSection() {
   return (
-    <section id="temoignages" style={{ backgroundColor: "#FFFFFF", padding: "96px 0" }}>
-      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 80px" }}>
+    <section id="temoignages" className="bg-white py-16 lg:py-24">
+      <Container>
+        <SectionHeading
+          className="mb-10 lg:mb-12"
+          kicker="Chiffres clés"
+          title="Ce que vivent nos familles."
+        />
 
-        {/* Section label */}
-        <p style={{ fontFamily: "var(--font-inter-display)", fontSize: "11px", fontWeight: 500, color: "#006BFA", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "8px" }}>
-          Chiffres clés
-        </p>
-        <h2 style={{ fontFamily: "var(--font-inter)", fontSize: "36.5px", fontWeight: 400, lineHeight: 1.315, color: "#1D1D1D", marginBottom: "48px" }}>
-          Ce que vivent nos familles.
-        </h2>
-
-        {/* Stat cards */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "24px", marginBottom: "80px" }}>
+        <div className="mb-16 grid grid-cols-1 gap-6 lg:mb-20 md:grid-cols-3">
           {stats.map((s) => (
             <div
               key={s.value}
-              style={{
-                backgroundColor: "#FFFFFF",
-                borderRadius: "32px",
-                padding: "32px 20px 24px",
-                boxShadow: shadowCard,
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                textAlign: "center",
-                gap: "12px",
-              }}
+              className="flex flex-col items-center gap-3 rounded-card bg-white px-5 py-8 text-center shadow-card"
             >
-              <div
-                style={{
-                  width: "64px", height: "64px",
-                  borderRadius: "128px",
-                  backgroundColor: "#EAF3FE",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                }}
-              >
-                {s.icon}
-              </div>
-              <p style={{ fontFamily: "var(--font-inter-display)", fontSize: "22px", fontWeight: 500, lineHeight: 1.3, color: "#1D1D1D" }}>
-                {s.value}
-              </p>
-              <p style={{ fontFamily: "var(--font-inter-display)", fontSize: "17.5px", fontWeight: 500, lineHeight: 1.52, color: "#666676" }}>
-                {s.label}
-              </p>
-              <div
-                style={{
-                  height: "29px",
-                  borderRadius: "128px",
-                  border: "1px solid #D9DBE0",
-                  padding: "0 16px",
-                  display: "flex", alignItems: "center",
-                  fontSize: "14px", fontWeight: 500, color: "#42424A",
-                  fontFamily: "var(--font-inter-display)",
-                  whiteSpace: "nowrap",
-                  marginTop: "4px",
-                }}
-              >
+              <IconBadge className="text-primary">{s.icon}</IconBadge>
+              <p className="font-display text-[22px] font-medium leading-[1.3] text-text">{s.value}</p>
+              <p className="font-display text-[17.5px] font-medium leading-[1.52] text-text-muted">{s.label}</p>
+              <div className="font-display mt-1 flex h-[29px] items-center whitespace-nowrap rounded-full border border-border px-4 text-[14px] font-medium text-text-secondary">
                 {s.source}
               </div>
             </div>
           ))}
         </div>
 
-        {/* Testimonials */}
-        <p style={{ fontFamily: "var(--font-inter-display)", fontSize: "11px", fontWeight: 500, color: "#006BFA", textTransform: "uppercase", letterSpacing: "1.5px", marginBottom: "8px" }}>
-          Témoignages
-        </p>
-        <h2 style={{ fontFamily: "var(--font-inter)", fontSize: "36.5px", fontWeight: 400, lineHeight: 1.315, color: "#1D1D1D", marginBottom: "40px" }}>
-          Ce que nos membres disent de Seren.
-        </h2>
+        <SectionHeading
+          className="mb-8 lg:mb-10"
+          kicker="Témoignages"
+          title="Ce que nos membres disent de Seren."
+        />
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "24px" }}>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {testimonials.map((t) => (
             <div
               key={t.author}
-              style={{
-                backgroundColor: "#FFFFFF",
-                borderRadius: "32px",
-                border: "1px solid #F2F0FF",
-                boxShadow: "0px 0.36px 0.36px -1.25px rgba(135,126,135,0.18), 0px 1.37px 1.37px -2.5px rgba(135,126,135,0.16), 0px 6px 6px -3.75px rgba(135,126,135,0.06)",
-                padding: "28px",
-                display: "flex",
-                flexDirection: "column",
-                gap: "20px",
-              }}
+              className="flex flex-col gap-5 rounded-card border border-border-card bg-white p-7 shadow-card-border"
             >
-              <blockquote
-                style={{
-                  fontFamily: "var(--font-inter-display)",
-                  fontSize: "19.5px",
-                  fontWeight: 500,
-                  lineHeight: 1.64,
-                  color: "#42424A",
-                  fontStyle: "italic",
-                }}
-              >
-                "{t.quote}"
+              <blockquote className="font-display text-[19.5px] font-medium italic leading-[1.64] text-text-secondary">
+                &ldquo;{t.quote}&rdquo;
               </blockquote>
               <div>
-                <p style={{ fontFamily: "var(--font-inter-display)", fontSize: "14px", fontWeight: 500, color: "#1D1D1D", lineHeight: 1.5 }}>{t.author}</p>
-                <p style={{ fontFamily: "var(--font-inter-display)", fontSize: "14px", fontWeight: 500, color: "#666676", lineHeight: 1.5, marginTop: "2px" }}>{t.context}</p>
+                <p className="font-display text-[14px] font-medium leading-[1.5] text-text">{t.author}</p>
+                <p className="font-display mt-0.5 text-[14px] font-medium leading-[1.5] text-text-muted">
+                  {t.context}
+                </p>
               </div>
             </div>
           ))}
         </div>
-
-      </div>
+      </Container>
     </section>
   );
 }

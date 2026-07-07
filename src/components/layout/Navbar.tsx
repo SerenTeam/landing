@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import Container from "@/components/ui/Container";
+import PillButton from "@/components/ui/PillButton";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -26,141 +28,94 @@ export default function Navbar() {
           "0px 0.3px 0.3px -1.25px rgba(0,0,0,0.18), 0px 1.14px 1.14px -2.5px rgba(0,0,0,0.16), 0px 5px 5px -3.75px rgba(0,0,0,0.06)",
       }}
     >
-      <nav className="mx-auto max-w-[1280px] px-[80px] flex items-center justify-between h-[82px]">
+      <Container className="flex h-[82px] items-center justify-between">
         <Link href="/" className="flex items-center">
           <Image src="/logo-full.svg" alt="Seren" width={104} height={40} priority />
         </Link>
 
-        <ul className="hidden md:flex items-center gap-10" style={{ fontFamily: "var(--font-inter)" }}>
+        <ul className="font-sans hidden items-center gap-10 lg:flex">
           <li>
-            <a
+            <Link
               href="/#comment-ca-marche"
               onClick={(e) => handleSectionClick(e, "comment-ca-marche")}
-              className="cursor-pointer transition-colors"
-              style={{ fontSize: "16px", color: "#1D1D1D", lineHeight: "1.25", textDecoration: "none" }}
+              className="cursor-pointer whitespace-nowrap text-[16px] leading-[1.25] text-text no-underline transition-colors"
             >
               Comment ça marche
-            </a>
-          </li>
-          <li>
-            <a
-              href="/#temoignages"
-              onClick={(e) => handleSectionClick(e, "temoignages")}
-              className="cursor-pointer transition-colors"
-              style={{ fontSize: "16px", color: "#1D1D1D", lineHeight: "1.25", textDecoration: "none" }}
-            >
-              Témoignages
-            </a>
+            </Link>
           </li>
           <li>
             <Link
-              href="/blog"
-              style={{ fontSize: "16px", color: "#1D1D1D", lineHeight: "1.25", textDecoration: "none" }}
+              href="/#temoignages"
+              onClick={(e) => handleSectionClick(e, "temoignages")}
+              className="cursor-pointer whitespace-nowrap text-[16px] leading-[1.25] text-text no-underline transition-colors"
             >
+              Témoignages
+            </Link>
+          </li>
+          <li>
+            <Link href="/blog" className="whitespace-nowrap text-[16px] leading-[1.25] text-text no-underline">
               Blog
             </Link>
           </li>
         </ul>
 
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden items-center gap-6 lg:flex">
           <a
             href="/inscription"
             data-cta-label="Connexion"
             data-cta-position="header"
-            style={{
-              fontFamily: "var(--font-inter)",
-              fontSize: "16px",
-              color: "#1D1D1D",
-              fontWeight: 400,
-              background: "transparent",
-              border: "none",
-              cursor: "pointer",
-              textDecoration: "none",
-            }}
+            className="font-sans cursor-pointer whitespace-nowrap border-none bg-transparent text-[16px] font-normal text-text no-underline"
           >
             Se connecter
           </a>
-          <a
-            href="/inscription"
-            data-cta-label="Inscription"
-            data-cta-position="header"
-            style={{
-              fontFamily: "var(--font-inter-display)",
-              fontSize: "16px",
-              fontWeight: 500,
-              color: "#FFFFFF",
-              backgroundColor: "#006BFA",
-              height: "42px",
-              padding: "0 24px",
-              borderRadius: "128px",
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              textDecoration: "none",
-              transition: "background 0.15s ease",
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#0057D0")}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#006BFA")}
-          >
+          <PillButton href="/inscription" size="md" ctaLabel="Inscription" ctaPosition="header">
             Commencer gratuitement
-          </a>
+          </PillButton>
         </div>
 
         <button
-          className="md:hidden p-2"
-          style={{ color: "#1D1D1D" }}
+          className="p-2 text-text lg:hidden"
           onClick={() => setOpen(!open)}
           aria-label="Menu"
         >
-          <span className="block w-5 h-0.5 bg-current mb-1.5" />
-          <span className="block w-5 h-0.5 bg-current mb-1.5" />
-          <span className="block w-5 h-0.5 bg-current" />
+          <span className="mb-1.5 block h-0.5 w-5 bg-current" />
+          <span className="mb-1.5 block h-0.5 w-5 bg-current" />
+          <span className="block h-0.5 w-5 bg-current" />
         </button>
-      </nav>
+      </Container>
 
       {open && (
         <div
-          className="md:hidden px-6 py-4 flex flex-col gap-4 border-t"
+          className="flex flex-col gap-4 border-t px-6 py-4 lg:hidden"
           style={{ backgroundColor: "rgba(255,255,255,0.97)", borderColor: "#D9DBE0" }}
         >
-          <a
+          <Link
             href="/#comment-ca-marche"
             onClick={(e) => handleSectionClick(e, "comment-ca-marche")}
-            style={{ fontSize: "16px", color: "#1D1D1D", cursor: "pointer", textDecoration: "none" }}
+            className="text-[16px] text-text no-underline"
           >
             Comment ça marche
-          </a>
-          <a
+          </Link>
+          <Link
             href="/#temoignages"
             onClick={(e) => handleSectionClick(e, "temoignages")}
-            style={{ fontSize: "16px", color: "#1D1D1D", cursor: "pointer", textDecoration: "none" }}
+            className="text-[16px] text-text no-underline"
           >
             Témoignages
-          </a>
-          <Link href="/blog" onClick={() => setOpen(false)} style={{ fontSize: "16px", color: "#1D1D1D", textDecoration: "none" }}>
+          </Link>
+          <Link href="/blog" onClick={() => setOpen(false)} className="text-[16px] text-text no-underline">
             Blog
           </Link>
-          <a
+          <PillButton
             href="/inscription"
-            data-cta-label="Inscription"
-            data-cta-position="header"
+            size="md"
+            ctaLabel="Inscription"
+            ctaPosition="header"
             onClick={() => setOpen(false)}
-            style={{
-              fontFamily: "var(--font-inter-display)",
-              fontSize: "16px",
-              fontWeight: 500,
-              color: "#FFFFFF",
-              backgroundColor: "#006BFA",
-              height: "42px",
-              borderRadius: "128px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              textDecoration: "none",
-            }}
+            className="w-full"
           >
             Commencer gratuitement
-          </a>
+          </PillButton>
         </div>
       )}
     </header>

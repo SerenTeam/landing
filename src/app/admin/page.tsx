@@ -217,41 +217,41 @@ function PreviewBlock({ block }: { block: Block }) {
   const base = 'mb-4';
   switch (block.type) {
     case 'h2':
-      return <h2 className={`${base} text-2xl font-bold text-[#1A2E35] mt-8`}>{block.content}</h2>;
+      return <h2 className={`${base} text-2xl font-bold text-[#1D1D1D] mt-8`}>{block.content}</h2>;
     case 'h3':
-      return <h3 className={`${base} text-xl font-semibold text-[#1A2E35] mt-6`}>{block.content}</h3>;
+      return <h3 className={`${base} text-xl font-semibold text-[#1D1D1D] mt-6`}>{block.content}</h3>;
     case 'paragraph':
-      return <p className={`${base} text-[#4A6572] leading-relaxed`}>{block.content}</p>;
+      return <p className={`${base} text-[#42424A] leading-relaxed`}>{block.content}</p>;
     case 'image':
       return (
         <figure className={`${base} flex flex-col gap-2`}>
           {block.content && (
-            <div className="relative w-full h-56 rounded-xl overflow-hidden bg-[#EEF4F2]">
+            <div className="relative w-full h-56 rounded-xl overflow-hidden bg-[#F2F0FF]">
               <Image src={block.content} alt={block.caption ?? ''} fill className="object-cover" unoptimized />
             </div>
           )}
           {block.caption && (
-            <figcaption className="text-xs text-[#6B8A85] text-center italic">{block.caption}</figcaption>
+            <figcaption className="text-xs text-[#666676] text-center italic">{block.caption}</figcaption>
           )}
         </figure>
       );
     case 'quote':
       return (
-        <blockquote className={`${base} border-l-4 border-[#2E7D80] pl-4 italic text-[#4A6572]`}>
+        <blockquote className={`${base} border-l-4 border-[#006BFA] pl-4 italic text-[#42424A]`}>
           {block.content}
         </blockquote>
       );
     case 'list':
       return (
-        <ul className={`${base} list-disc list-inside text-[#4A6572] space-y-1`}>
+        <ul className={`${base} list-disc list-inside text-[#42424A] space-y-1`}>
           {block.content.split('\n').filter(Boolean).map((item, i) => <li key={i}>{item}</li>)}
         </ul>
       );
     case 'tip':
       return (
-        <div className={`${base} bg-[#EEF4F2] border-l-4 border-[#6BAE9A] rounded-r-xl px-4 py-3`}>
-          <span className="text-xs font-bold text-[#2E7D80] uppercase tracking-wider">Conseil</span>
-          <p className="mt-1 text-[#1A2E35] text-sm leading-relaxed">{block.content}</p>
+        <div className={`${base} bg-[#F2F0FF] border-l-4 border-[#B5D4F4] rounded-r-xl px-4 py-3`}>
+          <span className="text-xs font-bold text-[#006BFA] uppercase tracking-wider">Conseil</span>
+          <p className="mt-1 text-[#1D1D1D] text-sm leading-relaxed">{block.content}</p>
         </div>
       );
   }
@@ -273,7 +273,7 @@ function BlockRow({
   setOpenTransformId: (id: string | null) => void;
 }) {
   const inputCls =
-    'w-full rounded-lg border border-[#EEF4F2] bg-[#F8FAF9] px-3 py-2 text-sm text-[#1A2E35] outline-none focus:border-[#2E7D80] focus:ring-2 focus:ring-[#2E7D80]/10 resize-none transition';
+    'w-full rounded-lg border border-[#F2F0FF] bg-[#F8F8F8] px-3 py-2 text-sm text-[#1D1D1D] outline-none focus:border-[#006BFA] focus:ring-2 focus:ring-[#006BFA]/10 resize-none transition';
 
   const menuRef = useRef<HTMLDivElement>(null);
   const isMenuOpen = openTransformId === block.id;
@@ -292,8 +292,8 @@ function BlockRow({
   const transformOptions = TRANSFORMABLE_TYPES.filter((b) => b.type !== block.type);
 
   return (
-    <div className="group flex gap-3 items-start bg-white border border-[#EEF4F2] rounded-xl p-3">
-      <span className="mt-1 flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-[#EEF4F2] text-[#2E7D80] text-xs font-bold">
+    <div className="group flex gap-3 items-start bg-white border border-[#F2F0FF] rounded-xl p-3">
+      <span className="mt-1 flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-[#F2F0FF] text-[#006BFA] text-xs font-bold">
         {BLOCK_TYPES.find((b) => b.type === block.type)?.icon}
       </span>
       <div className="flex-1 flex flex-col gap-2">
@@ -326,17 +326,17 @@ function BlockRow({
             <button
               onClick={() => setOpenTransformId(isMenuOpen ? null : block.id)}
               title="Transformer en"
-              className="w-7 h-7 flex items-center justify-center rounded text-[#6B8A85] hover:bg-[#EEF4F2] text-xs transition"
+              className="w-7 h-7 flex items-center justify-center rounded text-[#666676] hover:bg-[#F2F0FF] text-xs transition"
             >⇄</button>
             {isMenuOpen && (
-              <div className="absolute right-0 top-full mt-1 z-50 bg-white border border-[#EEF4F2] rounded-lg shadow-md min-w-[160px] py-1">
+              <div className="absolute right-0 top-full mt-1 z-50 bg-white border border-[#F2F0FF] rounded-lg shadow-md min-w-[160px] py-1">
                 {transformOptions.map(({ type, label, icon }) => (
                   <button
                     key={type}
                     onClick={() => { onTransform(block.id, type); setOpenTransformId(null); }}
-                    className="w-full flex items-center gap-2 px-3 py-2 text-[13px] text-[#1A2E35] hover:bg-[#EEF4F2] transition text-left"
+                    className="w-full flex items-center gap-2 px-3 py-2 text-[13px] text-[#1D1D1D] hover:bg-[#F2F0FF] transition text-left"
                   >
-                    <span className="text-[#2E7D80] font-medium w-5 text-center">{icon}</span>
+                    <span className="text-[#006BFA] font-medium w-5 text-center">{icon}</span>
                     {label}
                   </button>
                 ))}
@@ -345,9 +345,9 @@ function BlockRow({
           </div>
         )}
         <button onClick={() => onMove(block.id, -1)} disabled={index === 0} title="Monter"
-          className="w-7 h-7 flex items-center justify-center rounded text-[#6B8A85] hover:bg-[#EEF4F2] disabled:opacity-30 disabled:cursor-not-allowed text-xs transition">↑</button>
+          className="w-7 h-7 flex items-center justify-center rounded text-[#666676] hover:bg-[#F2F0FF] disabled:opacity-30 disabled:cursor-not-allowed text-xs transition">↑</button>
         <button onClick={() => onMove(block.id, 1)} disabled={index === total - 1} title="Descendre"
-          className="w-7 h-7 flex items-center justify-center rounded text-[#6B8A85] hover:bg-[#EEF4F2] disabled:opacity-30 disabled:cursor-not-allowed text-xs transition">↓</button>
+          className="w-7 h-7 flex items-center justify-center rounded text-[#666676] hover:bg-[#F2F0FF] disabled:opacity-30 disabled:cursor-not-allowed text-xs transition">↓</button>
         <button onClick={() => onRemove(block.id)} title="Supprimer"
           className="w-7 h-7 flex items-center justify-center rounded text-[#E24B4A] hover:bg-red-50 text-xs transition">×</button>
       </div>
@@ -575,32 +575,32 @@ export default function AdminPage() {
   const mdxPreview = generateMdxContent(meta, blocks);
 
   const inputCls = (field?: keyof Meta) =>
-    `w-full rounded-lg border ${field && errors[field] ? 'border-[#E24B4A] bg-red-50' : 'border-[#EEF4F2] bg-[#F8FAF9]'} px-3 py-2 text-sm text-[#1A2E35] outline-none focus:border-[#2E7D80] focus:ring-2 focus:ring-[#2E7D80]/10 transition resize-none`;
+    `w-full rounded-lg border ${field && errors[field] ? 'border-[#E24B4A] bg-red-50' : 'border-[#F2F0FF] bg-[#F8F8F8]'} px-3 py-2 text-sm text-[#1D1D1D] outline-none focus:border-[#006BFA] focus:ring-2 focus:ring-[#006BFA]/10 transition resize-none`;
 
   // ─── Render ───────────────────────────────────────────────────────────
 
   return (
-    <div className="min-h-screen bg-[#F8FAF9] flex flex-col">
+    <div className="min-h-screen bg-[#F8F8F8] flex flex-col">
       {/* ── Modale auth ── */}
       {authChecked && !authenticated && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#1A2E35]/60 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#1D1D1D]/60 backdrop-blur-sm">
           <div className="w-full max-w-[380px] mx-4 bg-white rounded-xl shadow-2xl p-8">
             <div className="text-center mb-7">
-              <span className="text-xl font-semibold text-[#2E7D80]">Seren</span>
-              <p className="text-sm text-[#6B8A85] mt-1">Espace équipe</p>
+              <span className="text-xl font-semibold text-[#006BFA]">Seren</span>
+              <p className="text-sm text-[#666676] mt-1">Espace équipe</p>
             </div>
             <form onSubmit={handleModalLogin} className="flex flex-col gap-4">
               <input type="text" autoComplete="username" placeholder="Identifiant" value={modalId}
                 onChange={(e) => setModalId(e.target.value)} required
-                className="rounded-lg border border-[#EEF4F2] bg-[#F8FAF9] px-4 py-2.5 text-sm text-[#1A2E35] outline-none focus:border-[#2E7D80] focus:ring-2 focus:ring-[#2E7D80]/10 transition" />
+                className="rounded-lg border border-[#F2F0FF] bg-[#F8F8F8] px-4 py-2.5 text-sm text-[#1D1D1D] outline-none focus:border-[#006BFA] focus:ring-2 focus:ring-[#006BFA]/10 transition" />
               <input type="password" autoComplete="current-password" placeholder="Mot de passe" value={modalPwd}
                 onChange={(e) => setModalPwd(e.target.value)} required
-                className="rounded-lg border border-[#EEF4F2] bg-[#F8FAF9] px-4 py-2.5 text-sm text-[#1A2E35] outline-none focus:border-[#2E7D80] focus:ring-2 focus:ring-[#2E7D80]/10 transition" />
+                className="rounded-lg border border-[#F2F0FF] bg-[#F8F8F8] px-4 py-2.5 text-sm text-[#1D1D1D] outline-none focus:border-[#006BFA] focus:ring-2 focus:ring-[#006BFA]/10 transition" />
               {modalError && (
                 <p className="text-sm text-[#E24B4A] bg-red-50 rounded-lg px-3 py-2 border border-red-100">{modalError}</p>
               )}
               <button type="submit" disabled={modalLoading}
-                className="mt-1 rounded-lg bg-[#2E7D80] py-3 text-sm font-semibold text-white hover:bg-[#1A2E35] transition disabled:opacity-60">
+                className="mt-1 rounded-lg bg-[#006BFA] py-3 text-sm font-semibold text-white hover:bg-[#1D1D1D] transition disabled:opacity-60">
                 {modalLoading ? 'Connexion…' : 'Accéder'}
               </button>
             </form>
@@ -609,9 +609,9 @@ export default function AdminPage() {
       )}
 
       {/* ── Header ── */}
-      <header className="sticky top-0 z-40 bg-white border-b border-[#EEF4F2] px-6 flex items-center justify-between h-14">
+      <header className="sticky top-0 z-40 bg-white border-b border-[#F2F0FF] px-6 flex items-center justify-between h-14">
         <div className="flex items-center gap-6">
-          <span className="font-semibold text-[#2E7D80] text-lg">Seren Admin</span>
+          <span className="font-semibold text-[#006BFA] text-lg">Seren Admin</span>
           {/* Onglets vue principale */}
           <div className="flex gap-1">
             {(['new-article', 'articles-list'] as AdminView[]).map((view) => (
@@ -622,15 +622,15 @@ export default function AdminPage() {
                 }}
                 className={`px-4 py-1.5 rounded-lg text-sm font-medium transition ${
                   adminView === view
-                    ? 'bg-[#EEF4F2] text-[#2E7D80]'
-                    : 'text-[#6B8A85] hover:text-[#1A2E35] hover:bg-[#F8FAF9]'
+                    ? 'bg-[#F2F0FF] text-[#006BFA]'
+                    : 'text-[#666676] hover:text-[#1D1D1D] hover:bg-[#F8F8F8]'
                 }`}>
                 {view === 'new-article' ? '✏️ Nouvel article' : '📋 Articles en ligne'}
               </button>
             ))}
           </div>
         </div>
-        <button onClick={handleLogout} className="text-sm text-[#6B8A85] hover:text-[#E24B4A] transition-colors">
+        <button onClick={handleLogout} className="text-sm text-[#666676] hover:text-[#E24B4A] transition-colors">
           Déconnexion
         </button>
       </header>
@@ -638,7 +638,7 @@ export default function AdminPage() {
       {/* ── VUE : Articles en ligne ── */}
       {adminView === 'articles-list' && (
         <div className="flex-1 p-6 max-w-4xl mx-auto w-full">
-          <h2 className="text-xl font-semibold text-[#1A2E35] mb-6">Articles en ligne</h2>
+          <h2 className="text-xl font-semibold text-[#1D1D1D] mb-6">Articles en ligne</h2>
 
           {deleteSuccess && (
             <div className="mb-4 rounded-lg bg-green-50 border border-green-200 px-4 py-2 text-sm text-green-700">
@@ -647,12 +647,12 @@ export default function AdminPage() {
           )}
 
           {articlesLoading ? (
-            <div className="text-center py-20 text-[#6B8A85]">
+            <div className="text-center py-20 text-[#666676]">
               <p className="text-3xl mb-3">⏳</p>
               <p className="text-sm">Chargement des articles…</p>
             </div>
           ) : articlesList.length === 0 ? (
-            <div className="text-center py-20 text-[#6B8A85]">
+            <div className="text-center py-20 text-[#666676]">
               <p className="text-3xl mb-3">📭</p>
               <p className="text-sm">Aucun article publié pour l'instant.</p>
             </div>
@@ -660,21 +660,21 @@ export default function AdminPage() {
             <div className="flex flex-col gap-4">
               {articlesList.map((article) => (
                 <div key={article.slug}
-                  className="bg-white rounded-xl border border-[#EEF4F2] p-5 flex flex-col sm:flex-row sm:items-start gap-4">
+                  className="bg-white rounded-xl border border-[#F2F0FF] p-5 flex flex-col sm:flex-row sm:items-start gap-4">
                   {/* Info */}
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap mb-1">
-                      <h3 className="font-medium text-[#1A2E35] text-base leading-snug">{article.title}</h3>
+                      <h3 className="font-medium text-[#1D1D1D] text-base leading-snug">{article.title}</h3>
                       {article.categorie && (
-                        <span className="inline-flex items-center rounded-full bg-[#EEF4F2] px-2 py-0.5 text-xs font-medium text-[#2E7D80]">
+                        <span className="inline-flex items-center rounded-full bg-[#F2F0FF] px-2 py-0.5 text-xs font-medium text-[#006BFA]">
                           {article.categorie}
                         </span>
                       )}
                     </div>
-                    <p className="text-xs text-[#6B8A85] mb-2">/blog/{article.slug} · {article.readTime || 'N/A'} · {
+                    <p className="text-xs text-[#666676] mb-2">/blog/{article.slug} · {article.readTime || 'N/A'} · {
                       article.date ? new Date(article.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }) : 'N/A'
                     }</p>
-                    <p className="text-sm text-[#6B8A85] leading-relaxed line-clamp-2">{article.excerpt}</p>
+                    <p className="text-sm text-[#666676] leading-relaxed line-clamp-2">{article.excerpt}</p>
                   </div>
 
                   {/* Actions */}
@@ -688,7 +688,7 @@ export default function AdminPage() {
                             Confirmer
                           </button>
                           <button onClick={() => setDeleteConfirm(null)}
-                            className="flex-1 rounded-lg border border-[#EEF4F2] text-[#6B8A85] px-3 py-1.5 hover:bg-[#F8FAF9] transition">
+                            className="flex-1 rounded-lg border border-[#F2F0FF] text-[#666676] px-3 py-1.5 hover:bg-[#F8F8F8] transition">
                             Annuler
                           </button>
                         </div>
@@ -696,7 +696,7 @@ export default function AdminPage() {
                     ) : (
                       <>
                         <button onClick={() => loadArticleForEdit(article.slug)}
-                          className="rounded-lg border border-[#2E7D80] px-4 py-1.5 text-sm font-medium text-[#2E7D80] hover:bg-[#EEF4F2] transition">
+                          className="rounded-lg border border-[#006BFA] px-4 py-1.5 text-sm font-medium text-[#006BFA] hover:bg-[#F2F0FF] transition">
                           Modifier
                         </button>
                         <button onClick={() => setDeleteConfirm(article.slug)}
@@ -717,7 +717,7 @@ export default function AdminPage() {
       {adminView === 'new-article' && (
         <div className="flex flex-1 overflow-hidden">
           {/* ── Sidebar ── */}
-          <aside className="w-[260px] flex-shrink-0 bg-white border-r border-[#EEF4F2] flex flex-col overflow-y-auto">
+          <aside className="w-[260px] flex-shrink-0 bg-white border-r border-[#F2F0FF] flex flex-col overflow-y-auto">
             <div className="p-4 flex flex-col gap-3 flex-1">
 
               {/* Bannière mode édition */}
@@ -734,7 +734,7 @@ export default function AdminPage() {
 
               {/* Title */}
               <div className="flex flex-col gap-1">
-                <label className="text-xs font-semibold text-[#1A2E35] uppercase tracking-wider">Titre</label>
+                <label className="text-xs font-semibold text-[#1D1D1D] uppercase tracking-wider">Titre</label>
                 <input className={inputCls('title')} placeholder="Titre de l'article"
                   value={meta.title} onChange={(e) => handleTitleChange(e.target.value)} />
                 {errors.title && <p className="text-xs text-[#E24B4A]">{errors.title}</p>}
@@ -742,16 +742,16 @@ export default function AdminPage() {
 
               {/* Slug */}
               <div className="flex flex-col gap-1">
-                <label className="text-xs font-semibold text-[#1A2E35] uppercase tracking-wider">Slug URL</label>
+                <label className="text-xs font-semibold text-[#1D1D1D] uppercase tracking-wider">Slug URL</label>
                 <input className={inputCls('slug')} placeholder="mon-article"
                   value={meta.slug} onChange={(e) => handleSlugChange(e.target.value)} />
                 {errors.slug && <p className="text-xs text-[#E24B4A]">{errors.slug}</p>}
-                <p className="text-xs text-[#6B8A85]">/blog/{meta.slug || '…'}</p>
+                <p className="text-xs text-[#666676]">/blog/{meta.slug || '…'}</p>
               </div>
 
               {/* Excerpt */}
               <div className="flex flex-col gap-1">
-                <label className="text-xs font-semibold text-[#1A2E35] uppercase tracking-wider">Extrait</label>
+                <label className="text-xs font-semibold text-[#1D1D1D] uppercase tracking-wider">Extrait</label>
                 <textarea className={inputCls('excerpt')} rows={2} placeholder="Résumé court de l'article"
                   value={meta.excerpt} onChange={(e) => setMeta((m) => ({ ...m, excerpt: e.target.value }))} />
                 {errors.excerpt && <p className="text-xs text-[#E24B4A]">{errors.excerpt}</p>}
@@ -759,7 +759,7 @@ export default function AdminPage() {
 
               {/* Date */}
               <div className="flex flex-col gap-1">
-                <label className="text-xs font-semibold text-[#1A2E35] uppercase tracking-wider">Date</label>
+                <label className="text-xs font-semibold text-[#1D1D1D] uppercase tracking-wider">Date</label>
                 <input type="date" className={inputCls('date')}
                   value={meta.date} onChange={(e) => setMeta((m) => ({ ...m, date: e.target.value }))} />
                 {errors.date && <p className="text-xs text-[#E24B4A]">{errors.date}</p>}
@@ -767,14 +767,14 @@ export default function AdminPage() {
 
               {/* Read time */}
               <div className="flex flex-col gap-1">
-                <label className="text-xs font-semibold text-[#1A2E35] uppercase tracking-wider">Temps de lecture</label>
+                <label className="text-xs font-semibold text-[#1D1D1D] uppercase tracking-wider">Temps de lecture</label>
                 <input className={inputCls()} placeholder="5 min de lecture"
                   value={meta.readTime} onChange={(e) => setMeta((m) => ({ ...m, readTime: e.target.value }))} />
               </div>
 
               {/* Category */}
               <div className="flex flex-col gap-1">
-                <label className="text-xs font-semibold text-[#1A2E35] uppercase tracking-wider">Catégorie</label>
+                <label className="text-xs font-semibold text-[#1D1D1D] uppercase tracking-wider">Catégorie</label>
                 <select className={inputCls()} value={meta.category}
                   onChange={(e) => setMeta((m) => ({ ...m, category: e.target.value }))}>
                   <option>Guide</option>
@@ -784,7 +784,7 @@ export default function AdminPage() {
                 </select>
               </div>
 
-              <hr className="border-[#EEF4F2] my-1" />
+              <hr className="border-[#F2F0FF] my-1" />
 
               {/* Import fichier .md */}
               <input
@@ -797,38 +797,38 @@ export default function AdminPage() {
               <button
                 type="button"
                 onClick={() => importInputRef.current?.click()}
-                className="flex items-center gap-2 rounded-lg border border-[#EEF4F2] bg-[#F8FAF9] px-2 py-1.5 text-xs text-[#1A2E35] hover:border-[#2E7D80] hover:bg-[#EEF4F2] transition w-full"
+                className="flex items-center gap-2 rounded-lg border border-[#F2F0FF] bg-[#F8F8F8] px-2 py-1.5 text-xs text-[#1D1D1D] hover:border-[#006BFA] hover:bg-[#F2F0FF] transition w-full"
               >
-                <span className="text-[#2E7D80] font-medium">↑</span>
+                <span className="text-[#006BFA] font-medium">↑</span>
                 Importer un fichier .md
               </button>
               {importSuccess && (
-                <p className="text-xs text-[#2E7D80] bg-[#EEF4F2] rounded-lg px-2 py-1.5">
+                <p className="text-xs text-[#006BFA] bg-[#F2F0FF] rounded-lg px-2 py-1.5">
                   Fichier importé. Vérifiez les blocs avant de publier.
                 </p>
               )}
 
               {/* Add blocks */}
-              <p className="text-xs font-semibold text-[#1A2E35] uppercase tracking-wider">Ajouter un bloc</p>
+              <p className="text-xs font-semibold text-[#1D1D1D] uppercase tracking-wider">Ajouter un bloc</p>
               <div className="grid grid-cols-2 gap-1.5">
                 {BLOCK_TYPES.map(({ type, label, icon }) => (
                   <button key={type} onClick={() => addBlock(type)}
-                    className="flex items-center gap-2 rounded-lg border border-[#EEF4F2] bg-[#F8FAF9] px-2 py-1.5 text-xs text-[#1A2E35] hover:border-[#2E7D80] hover:bg-[#EEF4F2] transition">
-                    <span className="text-[#2E7D80] font-medium w-5 text-center">{icon}</span>
+                    className="flex items-center gap-2 rounded-lg border border-[#F2F0FF] bg-[#F8F8F8] px-2 py-1.5 text-xs text-[#1D1D1D] hover:border-[#006BFA] hover:bg-[#F2F0FF] transition">
+                    <span className="text-[#006BFA] font-medium w-5 text-center">{icon}</span>
                     {label}
                   </button>
                 ))}
               </div>
 
-              <hr className="border-[#EEF4F2] my-1" />
+              <hr className="border-[#F2F0FF] my-1" />
 
               <button onClick={() => setActiveTab('preview')}
-                className="rounded-lg border border-[#2E7D80] px-4 py-2 text-sm font-medium text-[#2E7D80] hover:bg-[#EEF4F2] transition">
+                className="rounded-lg border border-[#006BFA] px-4 py-2 text-sm font-medium text-[#006BFA] hover:bg-[#F2F0FF] transition">
                 Aperçu
               </button>
 
               <button onClick={handlePublish} disabled={isPublishing}
-                className="rounded-lg bg-[#2E7D80] px-4 py-3 text-sm font-bold text-white hover:bg-[#1A2E35] transition disabled:opacity-60 disabled:cursor-not-allowed">
+                className="rounded-lg bg-[#006BFA] px-4 py-3 text-sm font-bold text-white hover:bg-[#1D1D1D] transition disabled:opacity-60 disabled:cursor-not-allowed">
                 {isPublishing
                   ? (editingSlug ? 'Mise à jour…' : 'Publication…')
                   : (editingSlug ? 'METTRE À JOUR' : "PUBLIER L'ARTICLE")}
@@ -843,7 +843,7 @@ export default function AdminPage() {
                   {publishResult.message}
                   {publishResult.ok && publishResult.slug && (
                     <a href={`/blog/${publishResult.slug}`} target="_blank" rel="noopener noreferrer"
-                      className="block mt-1 underline text-xs text-[#2E7D80]">
+                      className="block mt-1 underline text-xs text-[#006BFA]">
                       Voir l'article →
                     </a>
                   )}
@@ -854,13 +854,13 @@ export default function AdminPage() {
 
           {/* ── Main panel ── */}
           <main className="flex-1 flex flex-col overflow-hidden">
-            <div className="flex border-b border-[#EEF4F2] bg-white px-4">
+            <div className="flex border-b border-[#F2F0FF] bg-white px-4">
               {(['editor', 'preview', 'mdx'] as Tab[]).map((tab) => (
                 <button key={tab} onClick={() => setActiveTab(tab)}
                   className={`px-4 py-3 text-sm font-medium border-b-2 transition -mb-px ${
                     activeTab === tab
-                      ? 'border-[#2E7D80] text-[#2E7D80]'
-                      : 'border-transparent text-[#6B8A85] hover:text-[#1A2E35]'
+                      ? 'border-[#006BFA] text-[#006BFA]'
+                      : 'border-transparent text-[#666676] hover:text-[#1D1D1D]'
                   }`}>
                   {tab === 'editor' ? 'Éditeur' : tab === 'preview' ? 'Aperçu' : 'MDX'}
                 </button>
@@ -871,7 +871,7 @@ export default function AdminPage() {
               {activeTab === 'editor' && (
                 <div className="max-w-2xl mx-auto flex flex-col gap-3">
                   {blocks.length === 0 ? (
-                    <div className="text-center py-20 text-[#6B8A85]">
+                    <div className="text-center py-20 text-[#666676]">
                       <p className="text-4xl mb-3">✍️</p>
                       <p className="text-sm">Ajoutez des blocs depuis la sidebar pour commencer.</p>
                     </div>
@@ -889,19 +889,19 @@ export default function AdminPage() {
 
               {activeTab === 'preview' && (
                 <article className="max-w-[720px] mx-auto">
-                  <div className="mb-6 text-sm text-[#6B8A85] flex gap-3">
+                  <div className="mb-6 text-sm text-[#666676] flex gap-3">
                     <span>{meta.date || today}</span>
                     {meta.readTime && <><span>·</span><span>{meta.readTime}</span></>}
-                    {meta.category && <><span>·</span><span className="text-[#2E7D80]">{meta.category}</span></>}
+                    {meta.category && <><span>·</span><span className="text-[#006BFA]">{meta.category}</span></>}
                   </div>
-                  <h1 className="text-3xl font-bold text-[#1A2E35] mb-3 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
+                  <h1 className="text-3xl font-bold text-[#1D1D1D] mb-3 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
                     {meta.title || "Titre de l'article"}
                   </h1>
-                  {meta.excerpt && <p className="text-lg text-[#6B8A85] mb-8 leading-relaxed">{meta.excerpt}</p>}
-                  <hr className="border-[#EEF4F2] mb-8" />
+                  {meta.excerpt && <p className="text-lg text-[#666676] mb-8 leading-relaxed">{meta.excerpt}</p>}
+                  <hr className="border-[#F2F0FF] mb-8" />
                   <div style={{ fontFamily: 'Georgia, serif' }}>
                     {blocks.length === 0
-                      ? <p className="text-[#6B8A85] italic">Aucun contenu pour l'instant.</p>
+                      ? <p className="text-[#666676] italic">Aucun contenu pour l'instant.</p>
                       : blocks.map((block) => <PreviewBlock key={block.id} block={block} />)
                     }
                   </div>
@@ -910,7 +910,7 @@ export default function AdminPage() {
 
               {activeTab === 'mdx' && (
                 <div className="max-w-2xl mx-auto">
-                  <pre className="bg-[#1A2E35] text-[#6BAE9A] rounded-xl p-6 text-xs leading-relaxed overflow-x-auto whitespace-pre-wrap font-mono">
+                  <pre className="bg-[#1D1D1D] text-[#B5D4F4] rounded-xl p-6 text-xs leading-relaxed overflow-x-auto whitespace-pre-wrap font-mono">
                     {mdxPreview || '# Le MDX apparaîtra ici'}
                   </pre>
                 </div>
