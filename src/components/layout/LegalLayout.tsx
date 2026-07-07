@@ -12,48 +12,36 @@ export default function LegalLayout({ title, lastUpdated, children }: LegalLayou
   return (
     <>
       <Navbar />
-      <main className="flex flex-col flex-1" style={{ backgroundColor: "#F8F8F8" }}>
+      <main className="flex flex-1 flex-col bg-page-bg">
         {/* Header */}
-        <section style={{ background: "linear-gradient(to bottom, #FFFFFF, #F2F0FF)", padding: "56px 0 48px", borderBottom: "1px solid #F2F0FF" }}>
-          <div style={{ maxWidth: "800px", margin: "0 auto", padding: "0 32px" }}>
+        <section className="border-b border-border-card bg-gradient-to-b from-white to-border-card py-12 sm:py-14">
+          <div className="mx-auto w-full max-w-[800px] px-6 sm:px-8">
             <Link
               href="/"
-              style={{ fontSize: "13px", color: "#666676", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "4px", marginBottom: "20px" }}
+              className="mb-5 inline-flex items-center gap-1 text-[13px] text-text-muted no-underline"
             >
               ← Accueil
             </Link>
-            <h1
-              style={{
-                fontFamily: "var(--font-inter)",
-                fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
-                fontWeight: 400,
-                color: "#1D1D1D",
-                lineHeight: 1.176,
-                marginBottom: "10px",
-              }}
-            >
+            <h1 className="font-sans mb-2.5 text-[clamp(1.75rem,4vw,2.5rem)] font-normal leading-[1.176] text-text">
               {title}
             </h1>
-            <p style={{ fontSize: "13px", color: "#666676" }}>
-              Dernière mise à jour : {lastUpdated}
-            </p>
+            <p className="text-[13px] text-text-muted">Dernière mise à jour : {lastUpdated}</p>
           </div>
         </section>
 
         {/* Content */}
-        <section style={{ padding: "64px 0 96px" }}>
+        <section className="py-16 sm:py-24">
           <div
-            style={{ maxWidth: "800px", margin: "0 auto", padding: "0 32px" }}
             className="
-              prose prose-base max-w-none
-              prose-headings:font-normal prose-headings:text-[#1D1D1D] prose-headings:leading-snug
-              prose-h2:text-xl prose-h2:mt-10 prose-h2:mb-3 prose-h2:border-b prose-h2:border-[#D9DBE0] prose-h2:pb-2
-              prose-h3:text-base prose-h3:mt-6 prose-h3:mb-2
-              prose-p:text-[#666676] prose-p:leading-relaxed prose-p:mt-0 prose-p:mb-4
-              prose-a:text-[#006BFA] prose-a:font-medium prose-a:no-underline hover:prose-a:underline
-              prose-strong:text-[#1D1D1D] prose-strong:font-semibold
+              prose prose-base mx-auto w-full max-w-[800px] px-6 sm:px-8
+              prose-headings:font-normal prose-headings:text-text prose-headings:leading-snug
+              prose-h2:mt-10 prose-h2:mb-3 prose-h2:border-b prose-h2:border-border prose-h2:pb-2 prose-h2:text-xl
+              prose-h3:mt-6 prose-h3:mb-2 prose-h3:text-base
+              prose-p:mt-0 prose-p:mb-4 prose-p:leading-relaxed prose-p:text-text-muted
+              prose-a:font-medium prose-a:text-primary prose-a:no-underline hover:prose-a:underline
+              prose-strong:font-semibold prose-strong:text-text
               prose-ul:my-3 prose-ol:my-3
-              prose-li:text-[#666676] prose-li:my-1
+              prose-li:my-1 prose-li:text-text-muted
             "
           >
             {children}

@@ -4,6 +4,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { getAllArticles, getArticleBySlug } from "@/lib/blog";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import PillButton from "@/components/ui/PillButton";
 
 // Chaque article est pré-généré au build → ouverture instantanée
 export async function generateStaticParams() {
@@ -83,51 +84,34 @@ export default async function BlogPostPage({
           {/* MDX content */}
           <div className="
             prose prose-lg max-w-none
-            prose-headings:font-normal prose-headings:text-[#1D1D1D] prose-headings:leading-snug
+            prose-headings:font-normal prose-headings:text-text prose-headings:leading-snug
             prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
             prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-            prose-p:text-[#666676] prose-p:leading-relaxed prose-p:mt-0 prose-p:mb-5
-            prose-a:text-[#006BFA] prose-a:font-medium prose-a:no-underline hover:prose-a:underline
-            prose-strong:text-[#1D1D1D] prose-strong:font-semibold
+            prose-p:text-text-muted prose-p:leading-relaxed prose-p:mt-0 prose-p:mb-5
+            prose-a:text-primary prose-a:font-medium prose-a:no-underline hover:prose-a:underline
+            prose-strong:text-text prose-strong:font-semibold
             prose-ul:my-5 prose-ol:my-5
-            prose-li:text-[#666676] prose-li:my-1
-            prose-blockquote:border-l-[#006BFA] prose-blockquote:text-[#42424A] prose-blockquote:not-italic
-            prose-hr:border-[#D9DBE0] prose-hr:my-10
+            prose-li:text-text-muted prose-li:my-1
+            prose-blockquote:border-l-primary prose-blockquote:text-text-secondary prose-blockquote:not-italic
+            prose-hr:border-border prose-hr:my-10
             prose-img:rounded-xl prose-img:shadow-md
           ">
             <MDXRemote source={article.content} />
           </div>
 
           {/* CTA Seren */}
-          <div
-            style={{ marginTop: "64px", borderRadius: "32px", backgroundColor: "#1D1D1D", padding: "32px" }}
-            className="flex flex-col md:flex-row items-start md:items-center gap-6"
-          >
+          <div className="mt-16 flex flex-col items-start gap-6 rounded-card bg-ink p-8 md:flex-row md:items-center">
             <div className="flex-1">
-              <p style={{ fontFamily: "var(--font-inter-display)", fontSize: "18px", fontWeight: 500, color: "#FFFFFF", marginBottom: "4px" }}>
+              <p className="font-display mb-1 text-[18px] font-medium text-white">
                 Prêt à commencer vos démarches ?
               </p>
-              <p style={{ fontFamily: "var(--font-inter-display)", fontSize: "15px", fontWeight: 500, color: "rgba(255,255,255,0.6)", lineHeight: 1.55 }}>
+              <p className="font-display text-[15px] font-medium leading-[1.55] text-white/60">
                 Seren vous accompagne pas à pas, à votre rythme.
               </p>
             </div>
-            <a
-              href="/inscription"
-              data-cta-label="Inscription"
-              data-cta-position="article"
-              className="flex-shrink-0 inline-flex items-center justify-center whitespace-nowrap rounded-[128px] bg-[#006BFA] hover:bg-[#0057D0] transition-colors"
-              style={{
-                fontFamily: "var(--font-inter-display)",
-                fontSize: "16px",
-                fontWeight: 500,
-                color: "#FFFFFF",
-                height: "42px",
-                padding: "0 24px",
-                textDecoration: "none",
-              }}
-            >
+            <PillButton href="/inscription" size="md" ctaLabel="Inscription" ctaPosition="article" className="flex-shrink-0">
               Commencer gratuitement
-            </a>
+            </PillButton>
           </div>
         </article>
       </main>

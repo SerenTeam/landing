@@ -19,7 +19,7 @@ export default function MentionsLegalesPage() {
       <ul>
         <li><strong>Dénomination sociale :</strong> Seren SAS</li>
         <li><strong>Forme juridique :</strong> Société par actions simplifiée (SAS)</li>
-        <li><strong>Numéro SIREN :</strong> [en cours d'immatriculation]</li>
+        <li><strong>Numéro SIREN :</strong> [en cours d&apos;immatriculation]</li>
         <li><strong>Adresse e-mail :</strong> <a href="mailto:bonjour@seren.fr">bonjour@seren.fr</a></li>
       </ul>
 
@@ -37,7 +37,7 @@ export default function MentionsLegalesPage() {
 
       <h2>Propriété intellectuelle</h2>
       <p>
-        L'ensemble des contenus présents sur le site seren.fr (textes, images, graphismes, logotypes,
+        L&apos;ensemble des contenus présents sur le site seren.fr (textes, images, graphismes, logotypes,
         icônes, sons, logiciels…) sont la propriété exclusive de Seren SAS ou de ses partenaires,
         et sont protégés par les lois françaises et internationales relatives à la propriété
         intellectuelle.
@@ -45,7 +45,7 @@ export default function MentionsLegalesPage() {
       <p>
         Toute reproduction, représentation, modification, publication ou adaptation de tout ou
         partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite
-        sans l'autorisation écrite préalable de Seren SAS.
+        sans l&apos;autorisation écrite préalable de Seren SAS.
       </p>
 
       <h2>Liens hypertextes</h2>

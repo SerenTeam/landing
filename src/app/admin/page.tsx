@@ -654,7 +654,7 @@ export default function AdminPage() {
           ) : articlesList.length === 0 ? (
             <div className="text-center py-20 text-[#666676]">
               <p className="text-3xl mb-3">📭</p>
-              <p className="text-sm">Aucun article publié pour l'instant.</p>
+              <p className="text-sm">Aucun article publié pour l&apos;instant.</p>
             </div>
           ) : (
             <div className="flex flex-col gap-4">
@@ -844,7 +844,7 @@ export default function AdminPage() {
                   {publishResult.ok && publishResult.slug && (
                     <a href={`/blog/${publishResult.slug}`} target="_blank" rel="noopener noreferrer"
                       className="block mt-1 underline text-xs text-[#006BFA]">
-                      Voir l'article →
+                      Voir l&apos;article →
                     </a>
                   )}
                 </div>
@@ -901,7 +901,7 @@ export default function AdminPage() {
                   <hr className="border-[#F2F0FF] mb-8" />
                   <div style={{ fontFamily: 'Georgia, serif' }}>
                     {blocks.length === 0
-                      ? <p className="text-[#666676] italic">Aucun contenu pour l'instant.</p>
+                      ? <p className="text-[#666676] italic">Aucun contenu pour l&apos;instant.</p>
                       : blocks.map((block) => <PreviewBlock key={block.id} block={block} />)
                     }
                   </div>
