@@ -59,11 +59,13 @@ export default function Navbar({ lang = "fr" }: { lang?: Locale }) {
               {t.testimonials}
             </Link>
           </li>
-          <li>
-            <Link href="/blog" className="whitespace-nowrap text-[16px] leading-[1.25] text-text no-underline">
-              {t.blog}
-            </Link>
-          </li>
+          {lang === "fr" && (
+            <li>
+              <Link href="/blog" className="whitespace-nowrap text-[16px] leading-[1.25] text-text no-underline">
+                {t.blog}
+              </Link>
+            </li>
+          )}
         </ul>
 
         <div className="hidden items-center gap-5 lg:flex">
@@ -111,9 +113,11 @@ export default function Navbar({ lang = "fr" }: { lang?: Locale }) {
           >
             {t.testimonials}
           </Link>
-          <Link href="/blog" onClick={() => setOpen(false)} className="text-[16px] text-text no-underline">
-            {t.blog}
-          </Link>
+          {lang === "fr" && (
+            <Link href="/blog" onClick={() => setOpen(false)} className="text-[16px] text-text no-underline">
+              {t.blog}
+            </Link>
+          )}
           <LanguageSwitcher className="w-fit" />
           <PillButton
             href={inscription}
