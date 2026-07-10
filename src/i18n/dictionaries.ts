@@ -184,7 +184,7 @@ const en: typeof fr = {
     titleLine2: "a difficult time.",
     titleLine3: "We'll handle the rest.",
     subtitle:
-      "Seren guides you step by step through everything that follows the loss of someone close — in the right order, with the right words, never leaving you on your own.",
+      "Seren guides you step by step through everything that follows the loss of someone close in the right order, with the right words, never leaving you on your own.",
     ctaPrimary: "Get started for free",
     ctaSecondary: "See how it works",
     reassurance: "No sign-up required · Your data protected · Human first",
@@ -201,7 +201,7 @@ const en: typeof fr = {
     leadPrefix: "In France, a grieving person has to contact on average ",
     leadStrong: "22 different organisations",
     leadSuffix:
-      " within the first 6 months — often without knowing which ones, in what order, or how.",
+      " within the first 6 months often without knowing which ones, in what order, or how.",
     items: [
       {
         title: "Hundreds of hours lost",
@@ -229,7 +229,7 @@ const en: typeof fr = {
       {
         title: "Tell us what happened",
         description:
-          "With a few simple questions, Seren understands your situation and identifies every step that applies to you — and only those.",
+          "With a few simple questions, Seren understands your situation and identifies every step that applies to you and only those.",
       },
       {
         title: "Follow your personalised plan",
