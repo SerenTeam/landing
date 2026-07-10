@@ -5,6 +5,7 @@ export const metadata = {
   description: "Comment Seren collecte, utilise et protège vos données personnelles.",
   alternates: {
     canonical: "/confidentialite",
+    languages: { fr: "/confidentialite", en: "/en/confidentialite" },
   },
 };
 

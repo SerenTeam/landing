@@ -5,6 +5,7 @@ export const metadata = {
   description: "Mentions légales de Seren, assistant numérique pour les démarches post-décès.",
   alternates: {
     canonical: "/mentions-legales",
+    languages: { fr: "/mentions-legales", en: "/en/mentions-legales" },
   },
 };
 

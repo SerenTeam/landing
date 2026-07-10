@@ -3,31 +3,33 @@
 import Container from "@/components/ui/Container";
 import IconBadge from "@/components/ui/IconBadge";
 import PillButton from "@/components/ui/PillButton";
+import { getDictionary } from "@/i18n/dictionaries";
+import { localizePath, type Locale } from "@/i18n/config";
 
-export default function Hero() {
+export default function Hero({ lang = "fr" }: { lang?: Locale }) {
+  const t = getDictionary(lang).hero;
   return (
     <section className="relative overflow-hidden bg-white">
       <Container className="flex flex-col items-center gap-12 py-16 sm:py-20 lg:flex-row lg:gap-16 lg:py-24">
         {/* Left: text */}
         <div className="flex max-w-xl flex-1 flex-col gap-6">
           <div className="font-display inline-flex w-fit items-center gap-2 rounded-full bg-primary-light px-3 py-1 text-[12px] font-medium uppercase tracking-[0.5px] text-primary">
-            Disponible 24h/24, 7j/7
+            {t.badge}
           </div>
 
           <h1 className="font-sans text-[36px] font-normal leading-[1.18] tracking-[-0.5px] text-text sm:text-[44px] lg:text-[50.5px]">
-            Vous venez de vivre<br />
-            <span className="text-primary">un moment difficile.</span><br />
-            On s&apos;occupe du reste.
+            {t.titleLine1}<br />
+            <span className="text-primary">{t.titleLine2}</span><br />
+            {t.titleLine3}
           </h1>
 
           <p className="font-display text-[17px] font-medium leading-[1.6] text-text-secondary lg:text-[19.5px] lg:leading-[1.64]">
-            Seren vous guide pas à pas dans toutes les démarches après la perte
-            d&apos;un proche, dans le bon ordre, avec les bons mots, sans vous laisser seul.
+            {t.subtitle}
           </p>
 
           <div className="flex flex-col gap-4 pt-2 sm:flex-row">
-            <PillButton href="/inscription" ctaLabel="Inscription" ctaPosition="hero">
-              Commencer gratuitement
+            <PillButton href={localizePath("/inscription", lang)} ctaLabel="Inscription" ctaPosition="hero">
+              {t.ctaPrimary}
             </PillButton>
 
             <PillButton
@@ -41,12 +43,12 @@ export default function Hero() {
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <polygon points="5 3 19 12 5 21 5 3" />
               </svg>
-              Voir comment ça marche
+              {t.ctaSecondary}
             </PillButton>
           </div>
 
           <p className="font-sans text-[16px] italic leading-[1.6] text-text-muted">
-            Sans inscription obligatoire · Données protégées · Humain avant tout
+            {t.reassurance}
           </p>
         </div>
 
@@ -63,12 +65,12 @@ export default function Hero() {
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </IconBadge>
-                <span className="font-display text-[14px] font-medium text-text">Acte de décès</span>
+                <span className="font-display text-[14px] font-medium text-text">{t.card1Title}</span>
               </div>
               <div className="h-1.5 overflow-hidden rounded-full bg-primary-light">
                 <div className="h-full w-full rounded-full bg-primary" />
               </div>
-              <p className="font-display mt-1.5 text-[12px] font-medium text-text-muted">Complété</p>
+              <p className="font-display mt-1.5 text-[12px] font-medium text-text-muted">{t.card1Status}</p>
             </div>
 
             {/* Card 2 : en cours */}
@@ -79,18 +81,18 @@ export default function Hero() {
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
                 </IconBadge>
-                <span className="font-display text-[14px] font-medium text-text">Clôture bancaire</span>
+                <span className="font-display text-[14px] font-medium text-text">{t.card2Title}</span>
               </div>
               <div className="h-1.5 overflow-hidden rounded-full bg-primary-light">
                 <div className="h-full w-3/5 rounded-full bg-primary-light" />
               </div>
-              <p className="font-display mt-1.5 text-[12px] font-medium text-text-muted">En cours</p>
+              <p className="font-display mt-1.5 text-[12px] font-medium text-text-muted">{t.card2Status}</p>
             </div>
 
             {/* Card 3 : prochaine étape */}
             <div className="absolute bottom-4 left-10 w-[160px] rounded-[24px] bg-primary p-4">
-              <p className="font-display text-[12px] font-medium text-white">Prochaine étape :</p>
-              <p className="font-display mt-0.5 text-[12px] font-medium text-white/80">Notifier la CAF</p>
+              <p className="font-display text-[12px] font-medium text-white">{t.card3Label}</p>
+              <p className="font-display mt-0.5 text-[12px] font-medium text-white/80">{t.card3Value}</p>
             </div>
           </div>
         </div>

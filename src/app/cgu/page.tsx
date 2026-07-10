@@ -6,6 +6,7 @@ export const metadata = {
   description: "Conditions générales d'utilisation du service Seren.",
   alternates: {
     canonical: "/cgu",
+    languages: { fr: "/cgu", en: "/en/cgu" },
   },
 };
 

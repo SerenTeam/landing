@@ -1,31 +1,35 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Link from "next/link";
+import { getDictionary } from "@/i18n/dictionaries";
+import { localizePath, type Locale } from "@/i18n/config";
 
 interface LegalLayoutProps {
   title: string;
   lastUpdated: string;
+  lang?: Locale;
   children: React.ReactNode;
 }
 
-export default function LegalLayout({ title, lastUpdated, children }: LegalLayoutProps) {
+export default function LegalLayout({ title, lastUpdated, lang = "fr", children }: LegalLayoutProps) {
+  const t = getDictionary(lang).legal;
   return (
     <>
-      <Navbar />
+      <Navbar lang={lang} />
       <main className="flex flex-1 flex-col bg-page-bg">
         {/* Header */}
         <section className="border-b border-border-card bg-gradient-to-b from-white to-border-card py-12 sm:py-14">
           <div className="mx-auto w-full max-w-[800px] px-6 sm:px-8">
             <Link
-              href="/"
+              href={localizePath("/", lang)}
               className="mb-5 inline-flex items-center gap-1 text-[13px] text-text-muted no-underline"
             >
-              ← Accueil
+              ← {t.home}
             </Link>
             <h1 className="font-sans mb-2.5 text-[clamp(1.75rem,4vw,2.5rem)] font-normal leading-[1.176] text-text">
               {title}
             </h1>
-            <p className="text-[13px] text-text-muted">Dernière mise à jour : {lastUpdated}</p>
+            <p className="text-[13px] text-text-muted">{t.lastUpdated} {lastUpdated}</p>
           </div>
         </section>
 
@@ -44,11 +48,16 @@ export default function LegalLayout({ title, lastUpdated, children }: LegalLayou
               prose-li:my-1 prose-li:text-text-muted
             "
           >
+            {t.translationNotice && (
+              <p className="!mb-8 rounded-xl border border-border-card bg-surface px-4 py-3 text-[14px] italic text-text-muted">
+                {t.translationNotice}
+              </p>
+            )}
             {children}
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer lang={lang} />
     </>
   );
 }

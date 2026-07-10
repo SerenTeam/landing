@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
@@ -7,25 +6,18 @@ import SolutionSection from "@/components/sections/SolutionSection";
 import ReassuranceSection from "@/components/sections/ReassuranceSection";
 import CTASection from "@/components/sections/CTASection";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "/",
-    languages: { fr: "/", en: "/en" },
-  },
-};
-
-export default function Home() {
+export default function HomeEn() {
   return (
     <>
-      <Navbar />
+      <Navbar lang="en" />
       <main className="flex flex-col flex-1">
-        <Hero />
-        <ProblemSection />
-        <SolutionSection />
-        <ReassuranceSection />
-        <CTASection />
+        <Hero lang="en" />
+        <ProblemSection lang="en" />
+        <SolutionSection lang="en" />
+        <ReassuranceSection lang="en" />
+        <CTASection lang="en" />
       </main>
-      <Footer />
+      <Footer lang="en" />
     </>
   );
 }

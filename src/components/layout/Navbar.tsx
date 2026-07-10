@@ -6,13 +6,20 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Container from "@/components/ui/Container";
 import PillButton from "@/components/ui/PillButton";
+import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
+import { getDictionary } from "@/i18n/dictionaries";
+import { localizePath, type Locale } from "@/i18n/config";
 
-export default function Navbar() {
+export default function Navbar({ lang = "fr" }: { lang?: Locale }) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const t = getDictionary(lang).nav;
+
+  const home = localizePath("/", lang);
+  const inscription = localizePath("/inscription", lang);
 
   function handleSectionClick(e: React.MouseEvent, sectionId: string) {
-    if (pathname === "/") {
+    if (pathname === home) {
       e.preventDefault();
       document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
     }
@@ -29,47 +36,48 @@ export default function Navbar() {
       }}
     >
       <Container className="flex h-[82px] items-center justify-between">
-        <Link href="/" className="flex items-center">
+        <Link href={home} className="flex items-center">
           <Image src="/logo-full.svg" alt="Seren" width={104} height={40} priority />
         </Link>
 
         <ul className="font-sans hidden items-center gap-10 lg:flex">
           <li>
             <Link
-              href="/#comment-ca-marche"
+              href={`${home}#comment-ca-marche`}
               onClick={(e) => handleSectionClick(e, "comment-ca-marche")}
               className="cursor-pointer whitespace-nowrap text-[16px] leading-[1.25] text-text no-underline transition-colors"
             >
-              Comment ça marche
+              {t.howItWorks}
             </Link>
           </li>
           <li>
             <Link
-              href="/#temoignages"
+              href={`${home}#temoignages`}
               onClick={(e) => handleSectionClick(e, "temoignages")}
               className="cursor-pointer whitespace-nowrap text-[16px] leading-[1.25] text-text no-underline transition-colors"
             >
-              Témoignages
+              {t.testimonials}
             </Link>
           </li>
           <li>
             <Link href="/blog" className="whitespace-nowrap text-[16px] leading-[1.25] text-text no-underline">
-              Blog
+              {t.blog}
             </Link>
           </li>
         </ul>
 
-        <div className="hidden items-center gap-6 lg:flex">
+        <div className="hidden items-center gap-5 lg:flex">
+          <LanguageSwitcher />
           <a
-            href="/inscription"
+            href={inscription}
             data-cta-label="Connexion"
             data-cta-position="header"
             className="font-sans cursor-pointer whitespace-nowrap border-none bg-transparent text-[16px] font-normal text-text no-underline"
           >
-            Se connecter
+            {t.login}
           </a>
-          <PillButton href="/inscription" size="md" ctaLabel="Inscription" ctaPosition="header">
-            Commencer gratuitement
+          <PillButton href={inscription} size="md" ctaLabel="Inscription" ctaPosition="header">
+            {t.cta}
           </PillButton>
         </div>
 
@@ -90,31 +98,32 @@ export default function Navbar() {
           style={{ backgroundColor: "rgba(255,255,255,0.97)", borderColor: "#D9DBE0" }}
         >
           <Link
-            href="/#comment-ca-marche"
+            href={`${home}#comment-ca-marche`}
             onClick={(e) => handleSectionClick(e, "comment-ca-marche")}
             className="text-[16px] text-text no-underline"
           >
-            Comment ça marche
+            {t.howItWorks}
           </Link>
           <Link
-            href="/#temoignages"
+            href={`${home}#temoignages`}
             onClick={(e) => handleSectionClick(e, "temoignages")}
             className="text-[16px] text-text no-underline"
           >
-            Témoignages
+            {t.testimonials}
           </Link>
           <Link href="/blog" onClick={() => setOpen(false)} className="text-[16px] text-text no-underline">
-            Blog
+            {t.blog}
           </Link>
+          <LanguageSwitcher className="w-fit" />
           <PillButton
-            href="/inscription"
+            href={inscription}
             size="md"
             ctaLabel="Inscription"
             ctaPosition="header"
             onClick={() => setOpen(false)}
             className="w-full"
           >
-            Commencer gratuitement
+            {t.cta}
           </PillButton>
         </div>
       )}
