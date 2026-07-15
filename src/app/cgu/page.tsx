@@ -98,7 +98,7 @@ export default function CguPage() {
       <h2>8. Résiliation</h2>
       <p>
         L&apos;utilisateur peut supprimer son compte à tout moment depuis les paramètres du service
-        ou en contactant <a href="mailto:bonjour@seren.fr">bonjour@seren.fr</a>.
+        ou en contactant <a href="contact@seren-app.fr">contact@seren-app.fr</a>.
       </p>
       <p>
         Seren SAS se réserve le droit de suspendre ou de résilier l&apos;accès d&apos;un utilisateur
@@ -123,7 +123,7 @@ export default function CguPage() {
       <h2>Contact</h2>
       <p>
         Pour toute question relative aux présentes CGU :{" "}
-        <a href="mailto:bonjour@seren.fr">bonjour@seren.fr</a>.
+        <a href="contact@seren-app.fr">contact@seren-app.fr</a>.
       </p>
     </LegalLayout>
   );

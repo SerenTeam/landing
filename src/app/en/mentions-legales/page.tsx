@@ -23,7 +23,7 @@ export default function MentionsLegalesPageEn() {
         <li><strong>Company name:</strong> Seren SAS</li>
         <li><strong>Legal form:</strong> Simplified joint-stock company (SAS)</li>
         <li><strong>SIREN number:</strong> [registration in progress]</li>
-        <li><strong>Email address:</strong> <a href="mailto:bonjour@seren.fr">bonjour@seren.fr</a></li>
+        <li><strong>Email address:</strong> <a href="mailto:contact@seren-app.fr">contact@seren-app.fr</a></li>
       </ul>
 
       <h2>Publication director</h2>
@@ -65,7 +65,7 @@ export default function MentionsLegalesPageEn() {
       <h2>Contact</h2>
       <p>
         For any question regarding this legal notice, you can contact us at:{" "}
-        <a href="mailto:bonjour@seren.fr">bonjour@seren.fr</a>.
+        <a href="mailto:contact@seren-app.fr">contact@seren-app.fr</a>.
       </p>
     </LegalLayout>
   );

@@ -52,8 +52,8 @@ export default function Footer({ lang = "fr" }: { lang?: Locale }) {
             <span className="text-[14px] font-medium uppercase tracking-[0.8px] text-white/35">
               {t.contactTitle}
             </span>
-            <a href="mailto:bonjour@seren.fr" className="text-[14px] text-white/60 no-underline transition-colors hover:text-white">
-              bonjour@seren.fr
+            <a href="mailto:contact@seren-app.fr" className="text-[14px] text-white/60 no-underline transition-colors hover:text-white">
+              contact@seren-app.fr
             </a>
           </div>
         </div>

@@ -298,8 +298,8 @@ export default function Footer() {
 
           <div className="flex flex-col gap-3">
             <span className="text-white/40 uppercase text-xs tracking-wider font-medium">Contact</span>
-            <a href="mailto:bonjour@seren.fr" className="hover:text-white transition-colors leading-[24px]">
-              bonjour@seren.fr
+            <a href="mailto:contact@seren-app.fr" className="hover:text-white transition-colors leading-[24px]">
+              contact@seren-app.fr
             </a>
           </div>
         </div>

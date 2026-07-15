@@ -22,7 +22,7 @@ export default function ConfidentialitePage() {
       <p>
         Le responsable du traitement de vos données personnelles est <strong>Seren SAS</strong>,
         joignable à l&apos;adresse :{" "}
-        <a href="mailto:bonjour@seren.fr">bonjour@seren.fr</a>.
+        <a href="mailto:contact@seren-app.fr">contact@seren-app.fr</a>.
       </p>
 
       <h2>2. Données collectées</h2>
@@ -103,7 +103,7 @@ export default function ConfidentialitePage() {
       </ul>
       <p>
         Pour exercer ces droits, contactez-nous à :{" "}
-        <a href="mailto:bonjour@seren.fr">bonjour@seren.fr</a>. Nous répondrons dans un délai
+        <a href="mailto:contact@seren-app.fr">contact@seren-app.fr</a>. Nous répondrons dans un délai
         maximum d&apos;un mois.
       </p>
       <p>
@@ -129,7 +129,7 @@ export default function ConfidentialitePage() {
       <h2>Contact</h2>
       <p>
         Pour toute question relative à la protection de vos données :{" "}
-        <a href="mailto:bonjour@seren.fr">bonjour@seren.fr</a>.
+        <a href="mailto:contact@seren-app.fr">contact@seren-app.fr</a>.
       </p>
     </LegalLayout>
   );

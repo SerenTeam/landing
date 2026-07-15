@@ -21,7 +21,7 @@ export default function ConfidentialitePageEn() {
       <h2>1. Data controller</h2>
       <p>
         The controller of your personal data is <strong>Seren SAS</strong>, reachable at:{" "}
-        <a href="mailto:bonjour@seren.fr">bonjour@seren.fr</a>.
+        <a href="mailto:contact@seren-app.fr">contact@seren-app.fr</a>.
       </p>
 
       <h2>2. Data collected</h2>
@@ -101,7 +101,7 @@ export default function ConfidentialitePageEn() {
       </ul>
       <p>
         To exercise these rights, contact us at:{" "}
-        <a href="mailto:bonjour@seren.fr">bonjour@seren.fr</a>. We will respond within a maximum
+        <a href="mailto:contact@seren-app.fr">contact@seren-app.fr</a>. We will respond within a maximum
         of one month.
       </p>
       <p>
@@ -126,7 +126,7 @@ export default function ConfidentialitePageEn() {
       <h2>Contact</h2>
       <p>
         For any question regarding the protection of your data:{" "}
-        <a href="mailto:bonjour@seren.fr">bonjour@seren.fr</a>.
+        <a href="mailto:contact@seren-app.fr">contact@seren-app.fr</a>.
       </p>
     </LegalLayout>
   );

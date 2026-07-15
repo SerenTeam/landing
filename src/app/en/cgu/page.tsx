@@ -96,7 +96,7 @@ export default function CguPageEn() {
       <h2>8. Termination</h2>
       <p>
         The user may delete their account at any time from the service settings or by contacting{" "}
-        <a href="mailto:bonjour@seren.fr">bonjour@seren.fr</a>.
+        <a href="mailto:contact@seren-app.fr">contact@seren-app.fr</a>.
       </p>
       <p>
         Seren SAS reserves the right to suspend or terminate a user&apos;s access in the event of a
@@ -121,7 +121,7 @@ export default function CguPageEn() {
       <h2>Contact</h2>
       <p>
         For any question regarding these Terms of Use:{" "}
-        <a href="mailto:bonjour@seren.fr">bonjour@seren.fr</a>.
+        <a href="mailto:contact@seren-app.fr">contact@seren-app.fr</a>.
       </p>
     </LegalLayout>
   );
