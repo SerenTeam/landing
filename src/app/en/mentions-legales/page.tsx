@@ -15,7 +15,7 @@ export default function MentionsLegalesPageEn() {
     <LegalLayout title="Legal Notice" lastUpdated="13 May 2026" lang="en">
       <h2>Site publisher</h2>
       <p>
-        The site <strong>seren.fr</strong> is published by <strong>Seren SAS</strong>, a
+        The site <strong>seren-app.fr</strong> is published by <strong>Seren SAS</strong>, a
         simplified joint-stock company with share capital of €1,000, whose registered office is
         located in France.
       </p>
@@ -40,7 +40,7 @@ export default function MentionsLegalesPageEn() {
 
       <h2>Intellectual property</h2>
       <p>
-        All content on the seren.fr site (text, images, graphics, logos, icons, sounds,
+        All content on the seren-app.fr site (text, images, graphics, logos, icons, sounds,
         software, etc.) is the exclusive property of Seren SAS or its partners, and is protected
         by French and international laws relating to intellectual property.
       </p>
@@ -52,7 +52,7 @@ export default function MentionsLegalesPageEn() {
 
       <h2>Hyperlinks</h2>
       <p>
-        The seren.fr site may contain links to third-party sites. Seren SAS does not control
+        The seren-app.fr site may contain links to third-party sites. Seren SAS does not control
         these sites and declines any responsibility for their content or their privacy policy.
       </p>
 

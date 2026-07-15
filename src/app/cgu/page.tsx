@@ -15,7 +15,7 @@ export default function CguPage() {
     <LegalLayout title="Conditions Générales d'Utilisation" lastUpdated="13 mai 2026">
       <p>
         Les présentes Conditions Générales d&apos;Utilisation (CGU) régissent l&apos;accès et l&apos;utilisation
-        du service Seren, accessible à l&apos;adresse <strong>seren.fr</strong>, édité par Seren SAS.
+        du service Seren, accessible à l&apos;adresse <strong>seren-app.fr</strong>, édité par Seren SAS.
       </p>
       <p>
         En accédant au service, vous acceptez pleinement et sans réserve les présentes CGU.

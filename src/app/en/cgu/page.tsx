@@ -16,7 +16,7 @@ export default function CguPageEn() {
     <LegalLayout title="Terms of Use" lastUpdated="13 May 2026" lang="en">
       <p>
         These Terms of Use govern access to and use of the Seren service, available at{" "}
-        <strong>seren.fr</strong>, published by Seren SAS.
+        <strong>seren-app.fr</strong>, published by Seren SAS.
       </p>
       <p>
         By accessing the service, you fully and unreservedly accept these Terms of Use.

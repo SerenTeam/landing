@@ -14,7 +14,7 @@ export default function MentionsLegalesPage() {
     <LegalLayout title="Mentions légales" lastUpdated="13 mai 2026">
       <h2>Éditeur du site</h2>
       <p>
-        Le site <strong>seren.fr</strong> est édité par la société <strong>Seren SAS</strong>,
+        Le site <strong>seren-app.fr</strong> est édité par la société <strong>Seren SAS</strong>,
         société par actions simplifiée au capital de 1 000 €, dont le siège social est situé en France.
       </p>
       <ul>
@@ -38,7 +38,7 @@ export default function MentionsLegalesPage() {
 
       <h2>Propriété intellectuelle</h2>
       <p>
-        L&apos;ensemble des contenus présents sur le site seren.fr (textes, images, graphismes, logotypes,
+        L&apos;ensemble des contenus présents sur le site seren-app.fr (textes, images, graphismes, logotypes,
         icônes, sons, logiciels…) sont la propriété exclusive de Seren SAS ou de ses partenaires,
         et sont protégés par les lois françaises et internationales relatives à la propriété
         intellectuelle.
@@ -51,7 +51,7 @@ export default function MentionsLegalesPage() {
 
       <h2>Liens hypertextes</h2>
       <p>
-        Le site seren.fr peut contenir des liens vers des sites tiers. Seren SAS ne contrôle pas
+        Le site seren-app.fr peut contenir des liens vers des sites tiers. Seren SAS ne contrôle pas
         ces sites et décline toute responsabilité quant à leur contenu ou leur politique de
         confidentialité.
       </p>
