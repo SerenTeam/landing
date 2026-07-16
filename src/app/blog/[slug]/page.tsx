@@ -110,7 +110,7 @@ export default async function BlogPostPage({
               </p>
             </div>
             <PillButton href="/inscription" size="md" ctaLabel="Inscription" ctaPosition="article" className="flex-shrink-0">
-              Commencer gratuitement
+              Suivre Seren
             </PillButton>
           </div>
         </article>

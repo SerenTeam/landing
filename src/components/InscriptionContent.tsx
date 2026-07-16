@@ -7,12 +7,10 @@ import IconBadge from "@/components/ui/IconBadge";
 import { getDictionary } from "@/i18n/dictionaries";
 import { localizePath, type Locale } from "@/i18n/config";
 
-type Situation = "" | "perte" | "anticiper" | "professionnel";
-
 interface FormState {
-  prenom: string;
+  firstName: string;
   email: string;
-  situation: Situation;
+  botField: string; // honeypot : doit rester vide
 }
 
 const inputCls =
@@ -22,23 +20,42 @@ const labelCls = "font-display mb-2 block text-[14px] font-medium text-text-seco
 
 const cardCls = "rounded-card border border-border-card bg-white shadow-card-border";
 
+type Status = "idle" | "sending" | "success";
+
 export default function InscriptionContent({ lang = "fr" }: { lang?: Locale }) {
   const t = getDictionary(lang).inscription;
-  const [form, setForm] = useState<FormState>({ prenom: "", email: "", situation: "" });
-  const [submitted, setSubmitted] = useState(false);
+  const [form, setForm] = useState<FormState>({ firstName: "", email: "", botField: "" });
+  const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
 
   const bang = lang === "fr" ? " !" : "!";
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!form.email) {
       setError(t.emailError);
       return;
     }
     setError("");
-    // TODO: connect to Supabase
-    setSubmitted(true);
+    setStatus("sending");
+    try {
+      // Soumission AJAX vers Netlify Forms (form « newsletter », voir public/__forms.html).
+      const res = await fetch("/__forms.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({
+          "form-name": "newsletter",
+          firstname: form.firstName,
+          email: form.email,
+          "bot-field": form.botField,
+        }).toString(),
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      setStatus("success");
+    } catch {
+      setStatus("idle");
+      setError(t.errorGeneric);
+    }
   }
 
   return (
@@ -53,7 +70,7 @@ export default function InscriptionContent({ lang = "fr" }: { lang?: Locale }) {
       {/* Main content */}
       <main className="flex flex-1 items-center justify-center px-5 py-16">
         <div className="w-full max-w-[480px]">
-          {!submitted ? (
+          {status !== "success" ? (
             <>
               {/* Badge */}
               <div className="mb-8 flex justify-center">
@@ -74,15 +91,30 @@ export default function InscriptionContent({ lang = "fr" }: { lang?: Locale }) {
               {/* Form card */}
               <div className={`${cardCls} p-10`}>
                 <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+                  {/* Honeypot anti-spam : masqué, ne doit jamais être rempli par un humain */}
+                  <p className="hidden" aria-hidden="true">
+                    <label>
+                      {"Ne pas remplir : "}
+                      <input
+                        type="text"
+                        name="bot-field"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        value={form.botField}
+                        onChange={(e) => setForm({ ...form, botField: e.target.value })}
+                      />
+                    </label>
+                  </p>
+
                   {/* Prénom */}
                   <div>
-                    <label htmlFor="prenom" className={labelCls}>{t.firstName}</label>
+                    <label htmlFor="firstName" className={labelCls}>{t.firstName}</label>
                     <input
-                      id="prenom"
+                      id="firstName"
                       type="text"
                       placeholder={t.firstNamePlaceholder}
-                      value={form.prenom}
-                      onChange={(e) => setForm({ ...form, prenom: e.target.value })}
+                      value={form.firstName}
+                      onChange={(e) => setForm({ ...form, firstName: e.target.value })}
                       className={inputCls}
                     />
                   </div>
@@ -103,24 +135,6 @@ export default function InscriptionContent({ lang = "fr" }: { lang?: Locale }) {
                     />
                   </div>
 
-                  {/* Situation */}
-                  <div>
-                    <label htmlFor="situation" className={labelCls}>
-                      {t.situation} <span className="font-normal text-text-muted">{t.situationOptional}</span>
-                    </label>
-                    <select
-                      id="situation"
-                      value={form.situation}
-                      onChange={(e) => setForm({ ...form, situation: e.target.value as Situation })}
-                      className={`${inputCls} cursor-pointer ${form.situation ? "text-text" : "text-text-muted"}`}
-                    >
-                      <option value="" disabled>{t.situationPlaceholder}</option>
-                      <option value="perte">{t.situationLoss}</option>
-                      <option value="anticiper">{t.situationAnticipate}</option>
-                      <option value="professionnel">{t.situationPro}</option>
-                    </select>
-                  </div>
-
                   {/* Error */}
                   {error && (
                     <p className="font-sans -mt-2 text-[14px] text-red-600">{error}</p>
@@ -129,9 +143,10 @@ export default function InscriptionContent({ lang = "fr" }: { lang?: Locale }) {
                   {/* Submit */}
                   <button
                     type="submit"
-                    className="font-display mt-1 h-[51px] rounded-full bg-primary text-[18px] font-medium text-white transition-colors hover:bg-primary-hover"
+                    disabled={status === "sending"}
+                    className="font-display mt-1 h-[51px] rounded-full bg-primary text-[18px] font-medium text-white transition-colors hover:bg-primary-hover disabled:opacity-60"
                   >
-                    {t.submit}
+                    {status === "sending" ? t.sending : t.submit}
                   </button>
                 </form>
 
@@ -151,7 +166,7 @@ export default function InscriptionContent({ lang = "fr" }: { lang?: Locale }) {
               </IconBadge>
 
               <h2 className="font-sans text-[28px] font-normal leading-[1.3] text-text">
-                {form.prenom ? `${t.successTitle} ${form.prenom}${bang}` : `${t.successTitle}${bang}`}
+                {form.firstName ? `${t.successTitle} ${form.firstName}${bang}` : `${t.successTitle}${bang}`}
               </h2>
 
               <p className="font-display max-w-[360px] text-[17.7px] font-medium leading-[1.526] text-text-muted">
