@@ -23,6 +23,7 @@ export function localeFromPathname(pathname: string): Locale {
 const TRANSLATABLE_PATHS = [
   "/",
   "/inscription",
+  "/contact",
   "/cgu",
   "/mentions-legales",
   "/confidentialite",

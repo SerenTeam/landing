@@ -62,6 +62,7 @@ export const config = {
     // Tout le reste (/en, /blog, /admin, assets) est ignoré → pas de boucle.
     "/",
     "/inscription",
+    "/contact",
     "/cgu",
     "/mentions-legales",
     "/confidentialite",

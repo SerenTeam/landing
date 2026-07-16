@@ -52,9 +52,9 @@ export default function Footer({ lang = "fr" }: { lang?: Locale }) {
             <span className="text-[14px] font-medium uppercase tracking-[0.8px] text-white/35">
               {t.contactTitle}
             </span>
-            <a href="mailto:contact@seren-app.fr" className="text-[14px] text-white/60 no-underline transition-colors hover:text-white">
-              contact@seren-app.fr
-            </a>
+            <Link href={localizePath("/contact", lang)} className="text-[14px] text-white/60 no-underline transition-colors hover:text-white">
+              {t.contactLink}
+            </Link>
           </div>
         </div>
       </Container>

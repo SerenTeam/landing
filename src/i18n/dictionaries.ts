@@ -136,6 +136,7 @@ const fr = {
     privacy: "Confidentialité",
     terms: "CGU",
     contactTitle: "Contact",
+    contactLink: "Nous écrire",
     rights: "Tous droits réservés.",
   },
   legal: {
@@ -164,6 +165,27 @@ const fr = {
     successTitle: "Merci",
     successBody:
       "Vous serez parmi les premiers à découvrir Seren. On vous écrit dès que c'est prêt.",
+    backHome: "← Retour à l'accueil",
+  },
+  contact: {
+    title: "Contactez-nous",
+    subtitle:
+      "Une question, une remarque ? Écrivez-nous, nous vous répondrons rapidement.",
+    nameLabel: "Nom",
+    namePlaceholder: "Marie Dupont",
+    emailLabel: "Email",
+    emailPlaceholder: "marie@exemple.fr",
+    subjectLabel: "Sujet",
+    subjectPlaceholder: "L'objet de votre message",
+    messageLabel: "Message",
+    messagePlaceholder: "Votre message…",
+    submit: "Envoyer le message",
+    sending: "Envoi…",
+    errorRequired: "Merci de renseigner votre email et votre message.",
+    errorGeneric: "Une erreur est survenue. Réessayez dans un instant.",
+    successTitle: "Message envoyé",
+    successBody:
+      "Merci, nous avons bien reçu votre message. Nous vous répondrons au plus vite.",
     backHome: "← Retour à l'accueil",
   },
 };
@@ -299,6 +321,7 @@ const en: typeof fr = {
     privacy: "Privacy",
     terms: "Terms",
     contactTitle: "Contact",
+    contactLink: "Contact us",
     rights: "All rights reserved.",
   },
   legal: {
@@ -328,6 +351,27 @@ const en: typeof fr = {
     successTitle: "Thank you",
     successBody:
       "You'll be among the first to discover Seren. We'll write to you as soon as it's ready.",
+    backHome: "← Back to home",
+  },
+  contact: {
+    title: "Contact us",
+    subtitle:
+      "A question, a remark? Write to us and we'll get back to you shortly.",
+    nameLabel: "Name",
+    namePlaceholder: "Marie Dupont",
+    emailLabel: "Email",
+    emailPlaceholder: "marie@example.com",
+    subjectLabel: "Subject",
+    subjectPlaceholder: "What your message is about",
+    messageLabel: "Message",
+    messagePlaceholder: "Your message…",
+    submit: "Send message",
+    sending: "Sending…",
+    errorRequired: "Please provide your email and your message.",
+    errorGeneric: "Something went wrong. Please try again in a moment.",
+    successTitle: "Message sent",
+    successBody:
+      "Thank you, we've received your message. We'll get back to you as soon as possible.",
     backHome: "← Back to home",
   },
 };

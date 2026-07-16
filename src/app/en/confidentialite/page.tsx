@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import LegalLayout from "@/components/layout/LegalLayout";
 
@@ -20,8 +21,8 @@ export default function ConfidentialitePageEn() {
 
       <h2>1. Data controller</h2>
       <p>
-        The controller of your personal data is <strong>Seren SAS</strong>, reachable at:{" "}
-        <a href="mailto:contact@seren-app.fr">contact@seren-app.fr</a>.
+        The controller of your personal data is <strong>Seren SAS</strong>, reachable through our{" "}
+        <Link href="/en/contact">contact form</Link>.
       </p>
 
       <h2>2. Data collected</h2>
@@ -100,8 +101,8 @@ export default function ConfidentialitePageEn() {
         <li><strong>Right to restriction:</strong> restrict the processing of your data.</li>
       </ul>
       <p>
-        To exercise these rights, contact us at:{" "}
-        <a href="mailto:contact@seren-app.fr">contact@seren-app.fr</a>. We will respond within a maximum
+        To exercise these rights, contact us through our{" "}
+        <Link href="/en/contact">contact form</Link>. We will respond within a maximum
         of one month.
       </p>
       <p>
@@ -125,8 +126,8 @@ export default function ConfidentialitePageEn() {
 
       <h2>Contact</h2>
       <p>
-        For any question regarding the protection of your data:{" "}
-        <a href="mailto:contact@seren-app.fr">contact@seren-app.fr</a>.
+        For any question regarding the protection of your data, write to us through our{" "}
+        <Link href="/en/contact">contact form</Link>.
       </p>
     </LegalLayout>
   );

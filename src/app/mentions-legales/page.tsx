@@ -1,3 +1,4 @@
+import Link from "next/link";
 import LegalLayout from "@/components/layout/LegalLayout";
 
 export const metadata = {
@@ -21,7 +22,7 @@ export default function MentionsLegalesPage() {
         <li><strong>Dénomination sociale :</strong> Seren SAS</li>
         <li><strong>Forme juridique :</strong> Société par actions simplifiée (SAS)</li>
         <li><strong>Numéro SIREN :</strong> [en cours d&apos;immatriculation]</li>
-        <li><strong>Adresse e-mail :</strong> <a href="mailto:contact@seren-app.fr">contact@seren-app.fr</a></li>
+        <li><strong>Contact :</strong> <Link href="/contact">formulaire de contact</Link></li>
       </ul>
 
       <h2>Directeur de la publication</h2>
@@ -64,8 +65,8 @@ export default function MentionsLegalesPage() {
 
       <h2>Contact</h2>
       <p>
-        Pour toute question relative aux présentes mentions légales, vous pouvez nous contacter à :{" "}
-        <a href="mailto:contact@seren-app.fr">contact@seren-app.fr</a>.
+        Pour toute question relative aux présentes mentions légales, vous pouvez nous contacter via notre{" "}
+        <Link href="/contact">formulaire de contact</Link>.
       </p>
     </LegalLayout>
   );

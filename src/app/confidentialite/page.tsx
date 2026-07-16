@@ -1,3 +1,4 @@
+import Link from "next/link";
 import LegalLayout from "@/components/layout/LegalLayout";
 
 export const metadata = {
@@ -21,8 +22,8 @@ export default function ConfidentialitePage() {
       <h2>1. Responsable du traitement</h2>
       <p>
         Le responsable du traitement de vos données personnelles est <strong>Seren SAS</strong>,
-        joignable à l&apos;adresse :{" "}
-        <a href="mailto:contact@seren-app.fr">contact@seren-app.fr</a>.
+        joignable via notre{" "}
+        <Link href="/contact">formulaire de contact</Link>.
       </p>
 
       <h2>2. Données collectées</h2>
@@ -102,8 +103,8 @@ export default function ConfidentialitePage() {
         <li><strong>Droit à la limitation :</strong> limiter le traitement de vos données.</li>
       </ul>
       <p>
-        Pour exercer ces droits, contactez-nous à :{" "}
-        <a href="mailto:contact@seren-app.fr">contact@seren-app.fr</a>. Nous répondrons dans un délai
+        Pour exercer ces droits, contactez-nous via notre{" "}
+        <Link href="/contact">formulaire de contact</Link>. Nous répondrons dans un délai
         maximum d&apos;un mois.
       </p>
       <p>
@@ -128,8 +129,8 @@ export default function ConfidentialitePage() {
 
       <h2>Contact</h2>
       <p>
-        Pour toute question relative à la protection de vos données :{" "}
-        <a href="mailto:contact@seren-app.fr">contact@seren-app.fr</a>.
+        Pour toute question relative à la protection de vos données, écrivez-nous via notre{" "}
+        <Link href="/contact">formulaire de contact</Link>.
       </p>
     </LegalLayout>
   );

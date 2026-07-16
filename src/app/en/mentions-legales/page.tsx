@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import LegalLayout from "@/components/layout/LegalLayout";
 
@@ -23,7 +24,7 @@ export default function MentionsLegalesPageEn() {
         <li><strong>Company name:</strong> Seren SAS</li>
         <li><strong>Legal form:</strong> Simplified joint-stock company (SAS)</li>
         <li><strong>SIREN number:</strong> [registration in progress]</li>
-        <li><strong>Email address:</strong> <a href="mailto:contact@seren-app.fr">contact@seren-app.fr</a></li>
+        <li><strong>Contact:</strong> <Link href="/en/contact">contact form</Link></li>
       </ul>
 
       <h2>Publication director</h2>
@@ -64,8 +65,8 @@ export default function MentionsLegalesPageEn() {
 
       <h2>Contact</h2>
       <p>
-        For any question regarding this legal notice, you can contact us at:{" "}
-        <a href="mailto:contact@seren-app.fr">contact@seren-app.fr</a>.
+        For any question regarding this legal notice, you can contact us through our{" "}
+        <Link href="/en/contact">contact form</Link>.
       </p>
     </LegalLayout>
   );
