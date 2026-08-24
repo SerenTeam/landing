@@ -1,5 +1,6 @@
 import Container from "@/components/ui/Container";
 import IconBadge from "@/components/ui/IconBadge";
+import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { getDictionary } from "@/i18n/dictionaries";
 import type { Locale } from "@/i18n/config";
@@ -36,32 +37,33 @@ export default function SolutionSection({ lang = "fr" }: { lang?: Locale }) {
   return (
     <section id="comment-ca-marche" className="bg-gradient-to-b from-white to-border-card py-16 lg:py-24">
       <Container>
-        <SectionHeading
-          className="mb-12 lg:mb-16"
-          kicker={t.kicker}
-          title={t.title}
-          lead={t.lead}
-        />
+        <Reveal>
+          <SectionHeading
+            className="mb-12 lg:mb-16"
+            kicker={t.kicker}
+            title={t.title}
+            lead={t.lead}
+          />
+        </Reveal>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {t.steps.map((step, i) => (
-            <div
-              key={stepMeta[i].number}
-              className="flex flex-col rounded-card border border-border-card bg-white p-7 shadow-card-border"
-            >
-              <p className="font-display mb-4 text-[11px] font-medium uppercase tracking-[1.5px] text-primary">
-                {t.stepLabel} {stepMeta[i].number}
-              </p>
-              <IconBadge tone="violet" className="mb-5 text-violet">
-                {stepMeta[i].icon}
-              </IconBadge>
-              <h3 className="font-display mb-2 text-[22px] font-medium leading-[1.3] text-text-heading">
-                {step.title}
-              </h3>
-              <p className="font-display text-[17.5px] font-medium leading-[1.54] text-text-muted">
-                {step.description}
-              </p>
-            </div>
+            <Reveal key={stepMeta[i].number} delay={i * 100}>
+              <div className="group flex h-full flex-col rounded-card border border-border-card bg-white p-7 shadow-card-border transition-transform duration-300 hover:-translate-y-1">
+                <p className="font-display mb-4 text-[11px] font-medium uppercase tracking-[1.5px] text-primary">
+                  {t.stepLabel} {stepMeta[i].number}
+                </p>
+                <IconBadge tone="violet" className="mb-5 text-violet group-hover:scale-110">
+                  {stepMeta[i].icon}
+                </IconBadge>
+                <h3 className="font-display mb-2 text-[22px] font-medium leading-[1.3] text-text-heading">
+                  {step.title}
+                </h3>
+                <p className="font-display text-[17.5px] font-medium leading-[1.54] text-text-muted">
+                  {step.description}
+                </p>
+              </div>
+            </Reveal>
           ))}
         </div>
       </Container>

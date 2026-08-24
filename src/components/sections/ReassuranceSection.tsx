@@ -1,5 +1,6 @@
 import Container from "@/components/ui/Container";
 import IconBadge from "@/components/ui/IconBadge";
+import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { getDictionary } from "@/i18n/dictionaries";
 import type { Locale } from "@/i18n/config";
@@ -25,52 +26,28 @@ const statIcons = [
 export default function ReassuranceSection({ lang = "fr" }: { lang?: Locale }) {
   const t = getDictionary(lang).reassurance;
   return (
-    <section id="temoignages" className="bg-white py-16 lg:py-24">
+    <section id="chiffres-cles" className="bg-white py-16 lg:py-24">
       <Container>
-        <SectionHeading
-          className="mb-10 lg:mb-12"
-          kicker={t.statsKicker}
-          title={t.statsTitle}
-        />
+        <Reveal>
+          <SectionHeading
+            className="mb-10 lg:mb-12"
+            kicker={t.statsKicker}
+            title={t.statsTitle}
+          />
+        </Reveal>
 
-        <div className="mb-16 grid grid-cols-1 gap-6 lg:mb-20 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {t.stats.map((s, i) => (
-            <div
-              key={s.value}
-              className="flex flex-col items-center gap-3 rounded-card bg-white px-5 py-8 text-center shadow-card"
-            >
-              <IconBadge className="text-primary">{statIcons[i]}</IconBadge>
-              <p className="font-display text-[22px] font-medium leading-[1.3] text-text">{s.value}</p>
-              <p className="font-display text-[17.5px] font-medium leading-[1.52] text-text-muted">{s.label}</p>
-              <div className="font-display mt-1 flex h-[29px] items-center whitespace-nowrap rounded-full border border-border px-4 text-[14px] font-medium text-text-secondary">
-                {s.source}
+            <Reveal key={s.value} delay={i * 100}>
+              <div className="group flex h-full flex-col items-center gap-3 rounded-card bg-white px-5 py-8 text-center shadow-card transition-transform duration-300 hover:-translate-y-1">
+                <IconBadge className="text-primary group-hover:scale-110">{statIcons[i]}</IconBadge>
+                <p className="font-display text-[22px] font-medium leading-[1.3] text-text">{s.value}</p>
+                <p className="font-display text-[17.5px] font-medium leading-[1.52] text-text-muted">{s.label}</p>
+                <div className="font-display mt-1 flex h-[29px] items-center whitespace-nowrap rounded-full border border-border px-4 text-[14px] font-medium text-text-secondary">
+                  {s.source}
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-
-        <SectionHeading
-          className="mb-8 lg:mb-10"
-          kicker={t.testimonialsKicker}
-          title={t.testimonialsTitle}
-        />
-
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          {t.testimonials.map((item) => (
-            <div
-              key={item.author}
-              className="flex flex-col gap-5 rounded-card border border-border-card bg-white p-7 shadow-card-border"
-            >
-              <blockquote className="font-display text-[19.5px] font-medium italic leading-[1.64] text-text-secondary">
-                &ldquo;{item.quote}&rdquo;
-              </blockquote>
-              <div>
-                <p className="font-display text-[14px] font-medium leading-[1.5] text-text">{item.author}</p>
-                <p className="font-display mt-0.5 text-[14px] font-medium leading-[1.5] text-text-muted">
-                  {item.context}
-                </p>
-              </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </Container>

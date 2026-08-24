@@ -3,6 +3,7 @@
 import Container from "@/components/ui/Container";
 import IconBadge from "@/components/ui/IconBadge";
 import PillButton from "@/components/ui/PillButton";
+import Reveal from "@/components/ui/Reveal";
 import { getDictionary } from "@/i18n/dictionaries";
 import { localizePath, type Locale } from "@/i18n/config";
 
@@ -13,47 +14,57 @@ export default function Hero({ lang = "fr" }: { lang?: Locale }) {
       <Container className="flex flex-col items-center gap-12 py-16 sm:py-20 lg:flex-row lg:gap-16 lg:py-24">
         {/* Left: text */}
         <div className="flex max-w-xl flex-1 flex-col gap-6">
-          <div className="font-display inline-flex w-fit items-center gap-2 rounded-full bg-primary-light px-3 py-1 text-[12px] font-medium uppercase tracking-[0.5px] text-primary">
-            {t.badge}
-          </div>
+          <Reveal mode="mount" y={12}>
+            <div className="font-display inline-flex w-fit items-center gap-2 rounded-full bg-primary-light px-3 py-1 text-[12px] font-medium uppercase tracking-[0.5px] text-primary">
+              {t.badge}
+            </div>
+          </Reveal>
 
-          <h1 className="font-sans text-[36px] font-normal leading-[1.18] tracking-[-0.5px] text-text sm:text-[44px] lg:text-[50.5px]">
-            {t.titleLine1}<br />
-            <span className="text-primary">{t.titleLine2}</span><br />
-            {t.titleLine3}
-          </h1>
+          <Reveal mode="mount" delay={90} y={16}>
+            <h1 className="font-sans text-[36px] font-normal leading-[1.18] tracking-[-0.5px] text-text sm:text-[44px] lg:text-[50.5px]">
+              {t.titleLine1}<br />
+              <span className="text-primary">{t.titleLine2}</span><br />
+              {t.titleLine3}
+            </h1>
+          </Reveal>
 
-          <p className="font-display text-[17px] font-medium leading-[1.6] text-text-secondary lg:text-[19.5px] lg:leading-[1.64]">
-            {t.subtitle}
-          </p>
+          <Reveal mode="mount" delay={180} y={16}>
+            <p className="font-display text-[17px] font-medium leading-[1.6] text-text-secondary lg:text-[19.5px] lg:leading-[1.64]">
+              {t.subtitle}
+            </p>
+          </Reveal>
 
-          <div className="flex flex-col gap-4 pt-2 sm:flex-row">
-            <PillButton href={localizePath("/inscription", lang)} ctaLabel="Inscription" ctaPosition="hero">
-              {t.ctaPrimary}
-            </PillButton>
+          <Reveal mode="mount" delay={270} y={16}>
+            <div className="flex flex-col gap-4 pt-2 sm:flex-row">
+              <PillButton href={localizePath("/inscription", lang)} ctaLabel="Inscription" ctaPosition="hero">
+                {t.ctaPrimary}
+              </PillButton>
 
-            <PillButton
-              href="#comment-ca-marche"
-              variant="secondary"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById("comment-ca-marche")?.scrollIntoView({ behavior: "smooth" });
-              }}
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <polygon points="5 3 19 12 5 21 5 3" />
-              </svg>
-              {t.ctaSecondary}
-            </PillButton>
-          </div>
+              <PillButton
+                href="#video-demo"
+                variant="secondary"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById("video-demo")?.scrollIntoView({ behavior: "smooth", block: "start" });
+                }}
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polygon points="5 3 19 12 5 21 5 3" />
+                </svg>
+                {t.ctaSecondary}
+              </PillButton>
+            </div>
+          </Reveal>
 
-          <p className="font-sans text-[16px] italic leading-[1.6] text-text-muted">
-            {t.reassurance}
-          </p>
+          <Reveal mode="mount" delay={360} y={12}>
+            <p className="font-sans text-[16px] italic leading-[1.6] text-text-muted">
+              {t.reassurance}
+            </p>
+          </Reveal>
         </div>
 
         {/* Right: visual cards — décoratif, masqué en dessous de lg faute de place */}
-        <div className="hidden flex-1 justify-center lg:flex lg:justify-end">
+        <Reveal mode="mount" delay={200} y={24} className="hidden flex-1 justify-center lg:flex lg:justify-end">
           <div className="relative aspect-square w-full max-w-[440px]">
             <div className="absolute inset-0 rounded-card bg-gradient-to-b from-white to-border-card" />
 
@@ -95,7 +106,7 @@ export default function Hero({ lang = "fr" }: { lang?: Locale }) {
               <p className="font-display mt-0.5 text-[12px] font-medium text-white/80">{t.card3Value}</p>
             </div>
           </div>
-        </div>
+        </Reveal>
       </Container>
     </section>
   );

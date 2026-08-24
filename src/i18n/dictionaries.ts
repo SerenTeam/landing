@@ -8,7 +8,6 @@ import type { Locale } from "./config";
 const fr = {
   nav: {
     howItWorks: "Comment ça marche",
-    testimonials: "Témoignages",
     blog: "Blog",
     login: "Se connecter",
     cta: "Suivre Seren",
@@ -31,6 +30,11 @@ const fr = {
     card2Status: "En cours",
     card3Label: "Prochaine étape :",
     card3Value: "Notifier la CAF",
+  },
+  videoShowcase: {
+    ariaLabel: "Vidéo de présentation : comment fonctionne Seren",
+    playLabel: "Lancer la vidéo",
+    pauseLabel: "Mettre la vidéo en pause",
   },
   problem: {
     kicker: "La réalité",
@@ -98,22 +102,6 @@ const fr = {
         value: "6 mois",
         label: "de délais légaux à respecter pour certaines démarches administratives",
         source: "Code civil français",
-      },
-    ],
-    testimonialsKicker: "Témoignages",
-    testimonialsTitle: "Ce que nos membres disent de Seren.",
-    testimonials: [
-      {
-        quote:
-          "Je ne savais pas par où commencer. Seren m'a redonné le sentiment de contrôler quelque chose dans un moment où tout s'effondrait.",
-        author: "Marie-Claire, 54 ans",
-        context: "Après la perte de son mari",
-      },
-      {
-        quote:
-          "En 20 minutes, j'avais une liste claire de tout ce que j'avais à faire. Pour la première fois depuis des semaines, je me suis sentie moins seule.",
-        author: "Thomas, 38 ans",
-        context: "Après la perte de son père",
       },
     ],
   },
@@ -189,7 +177,6 @@ const fr = {
 const en: typeof fr = {
   nav: {
     howItWorks: "How it works",
-    testimonials: "Testimonials",
     blog: "Blog",
     login: "Log in",
     cta: "Follow Seren",
@@ -212,6 +199,11 @@ const en: typeof fr = {
     card2Status: "In progress",
     card3Label: "Next step:",
     card3Value: "Notify benefits office",
+  },
+  videoShowcase: {
+    ariaLabel: "Product walkthrough video: how Seren works",
+    playLabel: "Play video",
+    pauseLabel: "Pause video",
   },
   problem: {
     kicker: "The reality",
@@ -279,22 +271,6 @@ const en: typeof fr = {
         value: "6 months",
         label: "of legal deadlines to meet for certain administrative procedures",
         source: "French Civil Code",
-      },
-    ],
-    testimonialsKicker: "Testimonials",
-    testimonialsTitle: "What our members say about Seren.",
-    testimonials: [
-      {
-        quote:
-          "I didn't know where to start. Seren gave me back the feeling of being in control of something at a time when everything was falling apart.",
-        author: "Marie-Claire, 54",
-        context: "After losing her husband",
-      },
-      {
-        quote:
-          "In 20 minutes, I had a clear list of everything I had to do. For the first time in weeks, I felt less alone.",
-        author: "Thomas, 38",
-        context: "After losing his father",
       },
     ],
   },

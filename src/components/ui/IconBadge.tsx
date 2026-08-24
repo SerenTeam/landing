@@ -23,7 +23,7 @@ export default function IconBadge({
 }) {
   return (
     <div
-      className={`flex flex-shrink-0 items-center justify-center rounded-full ${SIZES[size]} ${TONES[tone]} ${className}`}
+      className={`flex flex-shrink-0 items-center justify-center rounded-full transition-transform duration-300 ${SIZES[size]} ${TONES[tone]} ${className}`}
     >
       {children}
     </div>
