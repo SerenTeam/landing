@@ -1,5 +1,6 @@
 import Container from "@/components/ui/Container";
 import IconBadge from "@/components/ui/IconBadge";
+import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { getDictionary } from "@/i18n/dictionaries";
 import type { Locale } from "@/i18n/config";
@@ -27,30 +28,38 @@ export default function ProblemSection({ lang = "fr" }: { lang?: Locale }) {
   return (
     <section className="bg-surface py-16 lg:py-24">
       <Container>
-        <SectionHeading
-          className="mb-12 lg:mb-16"
-          kicker={t.kicker}
-          title={t.title}
-          lead={
-            <>
-              {t.leadPrefix}
-              <strong className="font-medium text-text">{t.leadStrong}</strong>
-              {t.leadSuffix}
-            </>
-          }
-        />
+        <Reveal>
+          <SectionHeading
+            className="mb-12 lg:mb-16"
+            kicker={t.kicker}
+            title={t.title}
+            lead={
+              <>
+                {t.leadPrefix}
+                <strong className="font-medium text-text">{t.leadStrong}</strong>
+                {t.leadSuffix}
+              </>
+            }
+          />
+        </Reveal>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="border-t border-border-card">
           {t.items.map((p, i) => (
-            <div key={p.title} className="rounded-card bg-white p-7 shadow-card">
-              <IconBadge className="mb-5 text-primary">{icons[i]}</IconBadge>
-              <h3 className="font-display mb-2 text-[22px] font-medium leading-[1.3] text-text-heading">
-                {p.title}
-              </h3>
-              <p className="font-display text-[17.5px] font-medium leading-[1.54] text-text-muted">
-                {p.description}
-              </p>
-            </div>
+            <Reveal key={p.title} delay={i * 80}>
+              <div className="group -mx-4 flex flex-col gap-4 border-b border-border-card px-4 py-8 transition-colors duration-300 hover:bg-white sm:flex-row sm:items-center sm:gap-8 md:py-10">
+                <IconBadge className="shrink-0 text-primary transition-transform duration-300 group-hover:scale-110">
+                  {icons[i]}
+                </IconBadge>
+                <div>
+                  <h3 className="font-display mb-1.5 text-[20px] font-medium leading-[1.3] text-text-heading md:text-[22px]">
+                    {p.title}
+                  </h3>
+                  <p className="font-display text-[16.5px] font-medium leading-[1.54] text-text-muted md:text-[17.5px]">
+                    {p.description}
+                  </p>
+                </div>
+              </div>
+            </Reveal>
           ))}
         </div>
       </Container>

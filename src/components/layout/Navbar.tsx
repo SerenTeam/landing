@@ -45,18 +45,9 @@ export default function Navbar({ lang = "fr" }: { lang?: Locale }) {
             <Link
               href={`${home}#comment-ca-marche`}
               onClick={(e) => handleSectionClick(e, "comment-ca-marche")}
-              className="cursor-pointer whitespace-nowrap text-[16px] leading-[1.25] text-text no-underline transition-colors"
+              className="cursor-pointer whitespace-nowrap text-[16px] leading-[1.25] text-text no-underline transition-colors hover:text-primary"
             >
               {t.howItWorks}
-            </Link>
-          </li>
-          <li>
-            <Link
-              href={`${home}#temoignages`}
-              onClick={(e) => handleSectionClick(e, "temoignages")}
-              className="cursor-pointer whitespace-nowrap text-[16px] leading-[1.25] text-text no-underline transition-colors"
-            >
-              {t.testimonials}
             </Link>
           </li>
           {lang === "fr" && (
@@ -105,13 +96,6 @@ export default function Navbar({ lang = "fr" }: { lang?: Locale }) {
             className="text-[16px] text-text no-underline"
           >
             {t.howItWorks}
-          </Link>
-          <Link
-            href={`${home}#temoignages`}
-            onClick={(e) => handleSectionClick(e, "temoignages")}
-            className="text-[16px] text-text no-underline"
-          >
-            {t.testimonials}
           </Link>
           {lang === "fr" && (
             <Link href="/blog" onClick={() => setOpen(false)} className="text-[16px] text-text no-underline">
