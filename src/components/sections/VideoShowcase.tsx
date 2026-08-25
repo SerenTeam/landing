@@ -66,7 +66,7 @@ export default function VideoShowcase({ lang = "fr" }: { lang?: Locale }) {
   return (
     <section id="video-demo" className="scroll-mt-[100px] bg-white pb-16 sm:pb-20 lg:pb-24">
       <Container>
-        <Reveal y={24} className="relative aspect-video w-full overflow-hidden rounded-card bg-surface shadow-card">
+        <Reveal y={24} className="relative aspect-video w-full overflow-hidden rounded-card bg-surface shadow-float">
           <video
             ref={videoRef}
             className="h-full w-full object-cover"
