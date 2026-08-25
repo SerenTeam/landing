@@ -41,6 +41,8 @@
   --shadow-card:        0px 0.6px 0.6px -1.25px rgba(181,181,181,0.07), 0px 2.3px 2.3px -2.5px rgba(181,181,181,0.06), 0px 10px 10px -3.75px rgba(181,181,181,0.03), 0px 2px 4px 0px rgba(79,79,79,0.08);
   --shadow-card-border: 0px 0.36px 0.36px -1.25px rgba(135,126,135,0.18), 0px 1.37px 1.37px -2.5px rgba(135,126,135,0.16), 0px 6px 6px -3.75px rgba(135,126,135,0.06);
   --shadow-pill:        0px 0.6px 0.6px -1.25px rgba(0,0,0,0.18), 0px 2.3px 2.3px -2.5px rgba(0,0,0,0.16), 0px 10px 10px -3.75px rgba(0,0,0,0.06);
+  /* Variante shadow-card avec un halo centré (offset 0) qui déborde sur les 4 côtés, pour les blocs qui doivent flotter (ex. vidéo produit) */
+  --shadow-float:       0px 0.6px 0.6px -1.25px rgba(181,181,181,0.07), 0px 2.3px 2.3px -2.5px rgba(181,181,181,0.06), 0px 10px 10px -3.75px rgba(181,181,181,0.03), 0px 2px 4px 0px rgba(79,79,79,0.08), 0px 0px 28px 0px rgba(230,230,230,0.85), 0px 0px 48px 6px rgba(230,230,230,0.5);
 }
 
 body {
