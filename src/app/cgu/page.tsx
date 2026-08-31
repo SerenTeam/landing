@@ -40,10 +40,11 @@ export default function CguPage() {
 
       <h2>2. Accès au service</h2>
       <p>
-        Le questionnaire et la génération d&apos;une feuille de route personnalisée sont accessibles
-        gratuitement. L&apos;accès au service est conditionné à la création d&apos;un compte utilisateur
-        via la fourniture d&apos;une adresse e-mail valide. L&apos;utilisateur s&apos;engage à fournir des
-        informations exactes et à maintenir ses informations à jour.
+        L&apos;accès au service, y compris au questionnaire et à la feuille de route personnalisée,
+        est proposé sous la forme du forfait unique payant décrit à l&apos;article 3. L&apos;accès au
+        service est conditionné à la création d&apos;un compte utilisateur via la fourniture d&apos;une
+        adresse e-mail valide. L&apos;utilisateur s&apos;engage à fournir des informations exactes et à
+        maintenir ses informations à jour.
       </p>
       <p>
         L&apos;utilisateur est responsable de la confidentialité de ses identifiants de connexion.
@@ -51,20 +52,19 @@ export default function CguPage() {
       </p>
 
       <h2>3. Offre, prix et paiement</h2>
-      <p>Le service Seren comprend :</p>
-      <ul>
-        <li>un accès gratuit au questionnaire et à la feuille de route personnalisée ;</li>
-        <li>
-          un forfait payant, réglé en une seule fois (sans engagement ni reconduction automatique),
-          donnant accès à la préparation et à l&apos;envoi d&apos;un nombre de courriers déterminé — dont,
-          le cas échéant, des lettres recommandées avec accusé de réception — ainsi qu&apos;au suivi
-          des démarches associées.
-        </li>
-      </ul>
       <p>
-        Le prix du forfait, en euros TTC, ainsi que le nombre de courriers inclus, sont affichés
-        avant toute validation de commande. Au-delà de ce quota, tout envoi supplémentaire est
-        facturé séparément, au tarif indiqué au moment de la demande.
+        Le forfait Seren est proposé au prix unique de <strong>199 € TTC</strong>, réglé en une
+        seule fois (sans engagement ni reconduction automatique). Il donne accès, pendant 12 mois
+        à compter de l&apos;achat, à la feuille de route personnalisée et au contenu détaillé des
+        démarches, à la préparation de courriers pré-remplis, au coffre documents, au suivi de
+        chaque démarche avec relances automatiques, ainsi qu&apos;à l&apos;envoi de <strong>10 courriers
+        inclus, dont 5 lettres recommandées avec accusé de réception</strong>.
+      </p>
+      <p>
+        Au-delà de ce quota, chaque envoi supplémentaire est facturé <strong>9 €</strong> pour une
+        lettre recommandée avec accusé de réception et <strong>3 €</strong> pour un courrier simple.
+        Aucun envoi supplémentaire n&apos;est effectué sans l&apos;accord explicite préalable de
+        l&apos;utilisateur.
       </p>
       <p>
         Le paiement s&apos;effectue en ligne par carte bancaire, via un prestataire de paiement
@@ -91,13 +91,18 @@ export default function CguPage() {
         rétractation en utilisant notre <Link href="/contact">formulaire de contact</Link>.
       </p>
 
-      <h2>5. Remboursement</h2>
+      <h2>5. Garantie et remboursement</h2>
       <p>
-        En dehors du droit de rétractation décrit à l&apos;article 4, l&apos;utilisateur peut demander le
-        remboursement de son forfait via notre <Link href="/contact">formulaire de contact</Link>,
-        notamment en cas de dysfonctionnement du service ou de non-exécution imputable à
-        Seren SAS. Les modalités et délais de traitement sont précisés au moment de l&apos;achat et
-        lors de l&apos;examen de chaque demande.
+        En complément du droit de rétractation décrit à l&apos;article 4, Seren SAS propose la
+        garantie suivante : tant qu&apos;aucun courrier n&apos;a été envoyé pour le compte de
+        l&apos;utilisateur, celui-ci peut demander le remboursement intégral de son forfait. Une fois
+        l&apos;envoi des courriers commencé, l&apos;utilisateur peut demander, dans un délai de 30 jours à
+        compter de l&apos;achat, le remboursement du forfait déduction faite du coût des envois
+        réellement effectués.
+      </p>
+      <p>
+        Toute demande de remboursement s&apos;effectue via notre{" "}
+        <Link href="/contact">formulaire de contact</Link>.
       </p>
 
       <h2>6. Exécution du service d&apos;envoi de courriers</h2>

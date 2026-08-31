@@ -41,10 +41,10 @@ export default function CguPageEn() {
 
       <h2>2. Access to the service</h2>
       <p>
-        The questionnaire and the generation of a personalised roadmap are accessible free of
-        charge. Access to the service is conditional on creating a user account by providing a
-        valid email address. The user undertakes to provide accurate information and to keep
-        their information up to date.
+        Access to the service, including the questionnaire and the personalised roadmap, is
+        provided as part of the paid package described in section 3. Access to the service is
+        conditional on creating a user account by providing a valid email address. The user
+        undertakes to provide accurate information and to keep their information up to date.
       </p>
       <p>
         The user is responsible for the confidentiality of their login credentials. Any use of
@@ -52,20 +52,19 @@ export default function CguPageEn() {
       </p>
 
       <h2>3. Offer, price and payment</h2>
-      <p>The Seren service includes:</p>
-      <ul>
-        <li>free access to the questionnaire and the personalised roadmap;</li>
-        <li>
-          a paid package, billed as a single one-time payment (no subscription or automatic
-          renewal), giving access to the preparation and sending of a set number of letters —
-          including, where applicable, registered letters with acknowledgement of receipt —
-          as well as tracking of the related procedures.
-        </li>
-      </ul>
       <p>
-        The price of the package, in euros including tax, and the number of letters included,
-        are displayed before any order is confirmed. Beyond this quota, any additional letter
-        is billed separately, at the rate indicated at the time of the request.
+        The Seren package is offered at a single price of <strong>€199 including tax</strong>,
+        billed as a single one-time payment (no subscription or automatic renewal). It gives
+        access, for 12 months from the date of purchase, to the personalised roadmap and
+        detailed content for each procedure, to pre-filled letters, to the document vault, to
+        tracking of each procedure with automatic follow-up reminders, and to the sending of{" "}
+        <strong>10 included letters, including 5 registered letters with acknowledgement of
+        receipt</strong>.
+      </p>
+      <p>
+        Beyond this quota, each additional letter is billed at <strong>€9</strong> for a
+        registered letter with acknowledgement of receipt and <strong>€3</strong> for a standard
+        letter. No additional letter is sent without the user&apos;s prior explicit consent.
       </p>
       <p>
         Payment is made online by credit card, through a secure third-party payment provider.
@@ -91,13 +90,16 @@ export default function CguPageEn() {
         withdrawal using our <Link href="/en/contact">contact form</Link>.
       </p>
 
-      <h2>5. Refunds</h2>
+      <h2>5. Guarantee and refunds</h2>
       <p>
-        Outside of the right of withdrawal described in section 4, the user may request a
-        refund of their package via our <Link href="/en/contact">contact form</Link>, in
-        particular in the event of a service malfunction or non-performance attributable to
-        Seren SAS. The terms and processing time are specified at the time of purchase and
-        when each request is reviewed.
+        In addition to the right of withdrawal described in section 4, Seren SAS offers the
+        following guarantee: as long as no letter has been sent on the user&apos;s behalf, the user
+        may request a full refund of their package. Once the sending of letters has begun, the
+        user may request, within 30 days of purchase, a refund of the package less the cost of
+        the letters actually sent.
+      </p>
+      <p>
+        Any refund request must be made via our <Link href="/en/contact">contact form</Link>.
       </p>
 
       <h2>6. Performance of the letter-sending service</h2>
