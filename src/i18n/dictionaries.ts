@@ -15,7 +15,6 @@ const fr = {
     switchAria: "Passer en anglais",
   },
   hero: {
-    badge: "Disponible 24h/24, 7j/7",
     titleLine1: "Vous venez de vivre",
     titleLine2: "un moment difficile.",
     titleLine3: "On s'occupe du reste.",
@@ -30,6 +29,7 @@ const fr = {
     card2Status: "En cours",
     card3Label: "Prochaine étape :",
     card3Value: "Notifier la CAF",
+    imageAlt: "Une boisson chaude tenue à la main dans la lumière du matin",
   },
   videoShowcase: {
     ariaLabel: "Vidéo de présentation : comment fonctionne Seren",
@@ -38,7 +38,7 @@ const fr = {
   },
   problem: {
     kicker: "La réalité",
-    title: "Après une perte, tout s'accumule.",
+    title: "Après un décès, tout s'accumule.",
     leadPrefix: "En France, une personne en deuil doit contacter en moyenne ",
     leadStrong: "22 organismes différents",
     leadSuffix:
@@ -60,12 +60,14 @@ const fr = {
           "Notaires, banques, administrations... On se retrouve seul face à des institutions qui n'ont pas été conçues pour vous accompagner.",
       },
     ],
+    imageAlt: "Un carnet ouvert, un stylo et des lunettes posés sur un bureau en bois",
   },
   solution: {
     kicker: "Notre approche",
     title: "Seren vous guide, étape par étape.",
     lead: "Pas de jargon, pas de surcharge. Juste ce qu'il faut faire, dans le bon ordre, avec des explications claires.",
     stepLabel: "Étape",
+    imageAlt: "Une passerelle en bois qui traverse une forêt paisible",
     steps: [
       {
         title: "Dites-nous ce qui s'est passé",
@@ -90,7 +92,7 @@ const fr = {
     stats: [
       {
         value: "22 démarches",
-        label: "en moyenne à effectuer dans les 6 premiers mois après une perte",
+        label: "en moyenne à effectuer dans les 6 premiers mois après un décès",
         source: "Ministère de la Justice, 2023",
       },
       {
@@ -110,7 +112,8 @@ const fr = {
     lead: "Seren est là pour vous aider à avancer, une étape à la fois, avec clarté et bienveillance.",
     primary: "Suivre Seren",
     secondary: "Lire nos guides",
-    reassurance: "Sans engagement · Vos données restent privées",
+    reassurance: "Disponible 24h/24, 7j/7 · Sans engagement · Vos données restent privées",
+    imageAlt: "Une vallée verdoyante et brumeuse, éclairée par un lever de soleil",
   },
   footer: {
     tagline:
@@ -184,7 +187,6 @@ const en: typeof fr = {
     switchAria: "Switch to French",
   },
   hero: {
-    badge: "Available 24/7",
     titleLine1: "You've just been through",
     titleLine2: "a difficult time.",
     titleLine3: "We'll handle the rest.",
@@ -199,6 +201,7 @@ const en: typeof fr = {
     card2Status: "In progress",
     card3Label: "Next step:",
     card3Value: "Notify benefits office",
+    imageAlt: "A warm drink held in hand in the morning light",
   },
   videoShowcase: {
     ariaLabel: "Product walkthrough video: how Seren works",
@@ -229,12 +232,14 @@ const en: typeof fr = {
           "Notaries, banks, government offices... You find yourself alone against institutions that were never designed to support you.",
       },
     ],
+    imageAlt: "An open notebook, a pen and glasses resting on a wooden desk",
   },
   solution: {
     kicker: "Our approach",
     title: "Seren guides you, step by step.",
     lead: "No jargon, no overload. Just what needs doing, in the right order, with clear explanations.",
     stepLabel: "Step",
+    imageAlt: "A wooden footbridge crossing through a peaceful forest",
     steps: [
       {
         title: "Tell us what happened",
@@ -279,7 +284,8 @@ const en: typeof fr = {
     lead: "Seren is here to help you move forward, one step at a time, with clarity and care.",
     primary: "Follow Seren",
     secondary: "Read our guides",
-    reassurance: "No commitment · Your data stays private",
+    reassurance: "Available 24/7 · No commitment · Your data stays private",
+    imageAlt: "A lush, misty valley lit by a rising sun",
   },
   footer: {
     tagline:

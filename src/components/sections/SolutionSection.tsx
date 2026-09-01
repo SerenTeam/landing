@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Container from "@/components/ui/Container";
 import IconBadge from "@/components/ui/IconBadge";
 import Reveal from "@/components/ui/Reveal";
@@ -39,21 +40,21 @@ export default function SolutionSection({ lang = "fr" }: { lang?: Locale }) {
       <Container>
         <Reveal>
           <SectionHeading
-            className="mb-12 lg:mb-16"
+            className="mb-10 lg:mb-12"
             kicker={t.kicker}
             title={t.title}
             lead={t.lead}
           />
         </Reveal>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="mb-12 grid grid-cols-1 gap-6 md:grid-cols-3 lg:mb-16">
           {t.steps.map((step, i) => (
             <Reveal key={stepMeta[i].number} delay={i * 100}>
-              <div className="group flex h-full flex-col rounded-card border border-border-card bg-white p-7 shadow-card-border transition-transform duration-300 hover:-translate-y-1">
+              <div className="flex h-full flex-col rounded-card border border-border-card bg-white p-7 shadow-card-border">
                 <p className="font-display mb-4 text-[11px] font-medium uppercase tracking-[1.5px] text-primary">
                   {t.stepLabel} {stepMeta[i].number}
                 </p>
-                <IconBadge tone="violet" className="mb-5 text-violet group-hover:scale-110">
+                <IconBadge tone="violet" className="mb-5 text-violet">
                   {stepMeta[i].icon}
                 </IconBadge>
                 <h3 className="font-display mb-2 text-[22px] font-medium leading-[1.3] text-text-heading">
@@ -66,6 +67,18 @@ export default function SolutionSection({ lang = "fr" }: { lang?: Locale }) {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={80} y={24}>
+          <div className="relative aspect-[21/9] w-full overflow-hidden rounded-card shadow-card-border">
+            <Image
+              src="/images/landing/solution-path.jpg"
+              alt={t.imageAlt}
+              fill
+              sizes="(min-width: 1024px) 1120px, 100vw"
+              className="object-cover"
+            />
+          </div>
+        </Reveal>
       </Container>
     </section>
   );

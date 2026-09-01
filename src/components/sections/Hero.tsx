@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Container from "@/components/ui/Container";
 import IconBadge from "@/components/ui/IconBadge";
 import PillButton from "@/components/ui/PillButton";
@@ -14,13 +15,7 @@ export default function Hero({ lang = "fr" }: { lang?: Locale }) {
       <Container className="flex flex-col items-center gap-12 py-16 sm:py-20 lg:flex-row lg:gap-16 lg:py-24">
         {/* Left: text */}
         <div className="flex max-w-xl flex-1 flex-col gap-6">
-          <Reveal mode="mount" y={12}>
-            <div className="font-display inline-flex w-fit items-center gap-2 rounded-full bg-primary-light px-3 py-1 text-[12px] font-medium uppercase tracking-[0.5px] text-primary">
-              {t.badge}
-            </div>
-          </Reveal>
-
-          <Reveal mode="mount" delay={90} y={16}>
+          <Reveal mode="mount" y={16}>
             <h1 className="font-sans text-[36px] font-normal leading-[1.18] tracking-[-0.5px] text-text sm:text-[44px] lg:text-[50.5px]">
               {t.titleLine1}<br />
               <span className="text-primary">{t.titleLine2}</span><br />
@@ -28,13 +23,13 @@ export default function Hero({ lang = "fr" }: { lang?: Locale }) {
             </h1>
           </Reveal>
 
-          <Reveal mode="mount" delay={180} y={16}>
+          <Reveal mode="mount" delay={90} y={16}>
             <p className="font-display text-[17px] font-medium leading-[1.6] text-text-secondary lg:text-[19.5px] lg:leading-[1.64]">
               {t.subtitle}
             </p>
           </Reveal>
 
-          <Reveal mode="mount" delay={270} y={16}>
+          <Reveal mode="mount" delay={180} y={16}>
             <div className="flex flex-col gap-4 pt-2 sm:flex-row">
               <PillButton href={localizePath("/inscription", lang)} ctaLabel="Inscription" ctaPosition="hero">
                 {t.ctaPrimary}
@@ -56,20 +51,28 @@ export default function Hero({ lang = "fr" }: { lang?: Locale }) {
             </div>
           </Reveal>
 
-          <Reveal mode="mount" delay={360} y={12}>
+          <Reveal mode="mount" delay={270} y={12}>
             <p className="font-sans text-[16px] italic leading-[1.6] text-text-muted">
               {t.reassurance}
             </p>
           </Reveal>
         </div>
 
-        {/* Right: visual cards — décoratif, masqué en dessous de lg faute de place */}
-        <Reveal mode="mount" delay={200} y={24} className="hidden flex-1 justify-center lg:flex lg:justify-end">
-          <div className="relative aspect-square w-full max-w-[440px]">
-            <div className="absolute inset-0 rounded-card bg-gradient-to-b from-white to-border-card" />
+        {/* Right: photo + cartes flottantes (cartes masquées en dessous de lg faute de place) */}
+        <Reveal mode="mount" delay={200} y={24} className="flex flex-1 justify-center lg:justify-end">
+          <div className="relative aspect-[4/5] w-full max-w-[440px] overflow-hidden rounded-card shadow-float">
+            <Image
+              src="/images/landing/hero-warmth.jpg"
+              alt={t.imageAlt}
+              fill
+              priority
+              sizes="(min-width: 1024px) 440px, (min-width: 640px) 60vw, 90vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent" />
 
             {/* Card 1 : tâche complétée */}
-            <div className="absolute left-8 top-8 w-[200px] rounded-card border border-border-card bg-white p-5 shadow-card-border">
+            <div className="absolute left-6 top-6 hidden w-[200px] rounded-card border border-border-card bg-white/95 p-5 shadow-card-border backdrop-blur-sm lg:block">
               <div className="mb-3 flex items-center gap-3">
                 <IconBadge size="sm" className="text-primary">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -85,7 +88,7 @@ export default function Hero({ lang = "fr" }: { lang?: Locale }) {
             </div>
 
             {/* Card 2 : en cours */}
-            <div className="absolute bottom-12 right-6 w-[200px] rounded-card border border-border-card bg-white p-5 shadow-card-border">
+            <div className="absolute bottom-24 right-5 hidden w-[200px] rounded-card border border-border-card bg-white/95 p-5 shadow-card-border backdrop-blur-sm lg:block">
               <div className="mb-3 flex items-center gap-3">
                 <IconBadge size="sm" tone="violet" className="text-violet">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -101,7 +104,7 @@ export default function Hero({ lang = "fr" }: { lang?: Locale }) {
             </div>
 
             {/* Card 3 : prochaine étape */}
-            <div className="absolute bottom-4 left-10 w-[160px] rounded-[24px] bg-primary p-4">
+            <div className="absolute bottom-5 left-6 w-[160px] rounded-[24px] bg-primary p-4 shadow-card-border">
               <p className="font-display text-[12px] font-medium text-white">{t.card3Label}</p>
               <p className="font-display mt-0.5 text-[12px] font-medium text-white/80">{t.card3Value}</p>
             </div>

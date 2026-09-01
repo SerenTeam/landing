@@ -39,8 +39,8 @@ export default function ReassuranceSection({ lang = "fr" }: { lang?: Locale }) {
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {t.stats.map((s, i) => (
             <Reveal key={s.value} delay={i * 100}>
-              <div className="group flex h-full flex-col items-center gap-3 rounded-card bg-white px-5 py-8 text-center shadow-card transition-transform duration-300 hover:-translate-y-1">
-                <IconBadge className="text-primary group-hover:scale-110">{statIcons[i]}</IconBadge>
+              <div className="flex h-full flex-col items-center gap-3 rounded-card bg-white px-5 py-8 text-center shadow-card">
+                <IconBadge className="text-primary">{statIcons[i]}</IconBadge>
                 <p className="font-display text-[22px] font-medium leading-[1.3] text-text">{s.value}</p>
                 <p className="font-display text-[17.5px] font-medium leading-[1.52] text-text-muted">{s.label}</p>
                 <div className="font-display mt-1 flex h-[29px] items-center whitespace-nowrap rounded-full border border-border px-4 text-[14px] font-medium text-text-secondary">

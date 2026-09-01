@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Container from "@/components/ui/Container";
 import PillButton from "@/components/ui/PillButton";
 import Reveal from "@/components/ui/Reveal";
@@ -22,8 +23,17 @@ export default function CTASection({
   const resolvedSecondary =
     secondary === undefined ? { href: "/blog", label: t.secondary } : secondary;
   return (
-    <section className="bg-ink py-16 lg:py-24">
-      <Container className="flex flex-col items-center gap-8 text-center">
+    <section className="relative overflow-hidden bg-ink py-16 lg:py-24">
+      <Image
+        src="/images/landing/cta-sunrise.jpg"
+        alt={t.imageAlt}
+        fill
+        sizes="100vw"
+        className="object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/80 to-ink/40" />
+
+      <Container className="relative flex flex-col items-center gap-8 text-center">
         <Reveal>
           <h2 className="font-sans max-w-xl text-[28px] font-normal leading-[1.3] text-white sm:text-[32px] lg:text-[36.5px] lg:leading-[1.315]">
             {t.title}

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Container from "@/components/ui/Container";
 import IconBadge from "@/components/ui/IconBadge";
 import Reveal from "@/components/ui/Reveal";
@@ -28,26 +29,39 @@ export default function ProblemSection({ lang = "fr" }: { lang?: Locale }) {
   return (
     <section className="bg-surface py-16 lg:py-24">
       <Container>
-        <Reveal>
-          <SectionHeading
-            className="mb-12 lg:mb-16"
-            kicker={t.kicker}
-            title={t.title}
-            lead={
-              <>
-                {t.leadPrefix}
-                <strong className="font-medium text-text">{t.leadStrong}</strong>
-                {t.leadSuffix}
-              </>
-            }
-          />
-        </Reveal>
+        <div className="mb-12 flex flex-col gap-10 lg:mb-16 lg:flex-row lg:items-center lg:gap-16">
+          <Reveal className="flex-1">
+            <SectionHeading
+              kicker={t.kicker}
+              title={t.title}
+              lead={
+                <>
+                  {t.leadPrefix}
+                  <strong className="font-medium text-text">{t.leadStrong}</strong>
+                  {t.leadSuffix}
+                </>
+              }
+            />
+          </Reveal>
+
+          <Reveal delay={120} y={24} className="flex-1">
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-card shadow-card-border">
+              <Image
+                src="/images/landing/problem-desk.jpg"
+                alt={t.imageAlt}
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+          </Reveal>
+        </div>
 
         <div className="border-t border-border-card">
           {t.items.map((p, i) => (
             <Reveal key={p.title} delay={i * 80}>
-              <div className="group -mx-4 flex flex-col gap-4 border-b border-border-card px-4 py-8 transition-colors duration-300 hover:bg-white sm:flex-row sm:items-center sm:gap-8 md:py-10">
-                <IconBadge className="shrink-0 text-primary transition-transform duration-300 group-hover:scale-110">
+              <div className="-mx-4 flex flex-col gap-4 border-b border-border-card px-4 py-8 sm:flex-row sm:items-center sm:gap-8 md:py-10">
+                <IconBadge className="shrink-0 text-primary">
                   {icons[i]}
                 </IconBadge>
                 <div>
