@@ -96,9 +96,9 @@ const fr = {
         source: "Ministère de la Justice, 2023",
       },
       {
-        value: "94%",
-        label: "de nos utilisateurs disent avoir été soulagés dès la première session",
-        source: "Seren, enquête 2024",
+        value: "30 jours",
+        label: "pour changer d'avis, avec remboursement possible si Seren ne vous convient pas",
+        source: "CGU Seren",
       },
       {
         value: "6 mois",
@@ -268,9 +268,9 @@ const en: typeof fr = {
         source: "French Ministry of Justice, 2023",
       },
       {
-        value: "94%",
-        label: "of our users say they felt relieved from the very first session",
-        source: "Seren, 2024 survey",
+        value: "30 days",
+        label: "to change your mind, with a refund available if Seren isn't the right fit",
+        source: "Seren Terms of Service",
       },
       {
         value: "6 months",
