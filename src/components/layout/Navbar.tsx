@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Container from "@/components/ui/Container";
 import PillButton from "@/components/ui/PillButton";
@@ -12,11 +12,21 @@ import { localizePath, type Locale } from "@/i18n/config";
 
 export default function Navbar({ lang = "fr" }: { lang?: Locale }) {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const t = getDictionary(lang).nav;
 
   const home = localizePath("/", lang);
   const inscription = localizePath("/inscription", lang);
+
+  useEffect(() => {
+    function onScroll() {
+      setScrolled(window.scrollY > 24);
+    }
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   function handleSectionClick(e: React.MouseEvent, sectionId: string) {
     if (pathname === home) {
@@ -27,68 +37,74 @@ export default function Navbar({ lang = "fr" }: { lang?: Locale }) {
   }
 
   return (
-    <header
-      className="sticky top-0 z-50 backdrop-blur-[16px]"
-      style={{
-        backgroundColor: "rgba(255,255,255,0.8)",
-        boxShadow:
-          "0px 0.3px 0.3px -1.25px rgba(0,0,0,0.18), 0px 1.14px 1.14px -2.5px rgba(0,0,0,0.16), 0px 5px 5px -3.75px rgba(0,0,0,0.06)",
-      }}
-    >
-      <Container className="flex h-[82px] items-center justify-between">
-        <Link href={home} className="flex items-center">
-          <Image src="/logo-full.svg" alt="Seren" width={104} height={40} priority />
-        </Link>
+    <header className="sticky top-0 z-50 px-3 pt-3 transition-[padding] duration-300 sm:px-6 lg:px-8">
+      <div
+        className={`mx-auto max-w-[1180px] backdrop-blur-[16px] transition-all duration-300 ${
+          scrolled ? "rounded-full shadow-float" : "rounded-none shadow-none"
+        }`}
+        style={{
+          backgroundColor: scrolled ? "rgba(250,250,250,0.9)" : "rgba(255,255,255,0.8)",
+        }}
+      >
+        <Container
+          className={`flex items-center justify-between transition-[height] duration-300 ${
+            scrolled ? "h-[64px]" : "h-[82px]"
+          }`}
+        >
+          <Link href={home} className="flex items-center">
+            <Image src="/logo-full.svg" alt="Seren" width={104} height={40} priority />
+          </Link>
 
-        <ul className="font-sans hidden items-center gap-10 lg:flex">
-          <li>
-            <Link
-              href={`${home}#comment-ca-marche`}
-              onClick={(e) => handleSectionClick(e, "comment-ca-marche")}
-              className="cursor-pointer whitespace-nowrap text-[16px] leading-[1.25] text-text no-underline transition-colors hover:text-primary"
-            >
-              {t.howItWorks}
-            </Link>
-          </li>
-          {lang === "fr" && (
+          <ul className="font-sans hidden items-center gap-10 lg:flex">
             <li>
-              <Link href="/blog" className="whitespace-nowrap text-[16px] leading-[1.25] text-text no-underline">
-                {t.blog}
+              <Link
+                href={`${home}#comment-ca-marche`}
+                onClick={(e) => handleSectionClick(e, "comment-ca-marche")}
+                className="cursor-pointer whitespace-nowrap text-[16px] leading-[1.25] text-text no-underline transition-colors hover:text-primary"
+              >
+                {t.howItWorks}
               </Link>
             </li>
-          )}
-        </ul>
+            {lang === "fr" && (
+              <li>
+                <Link href="/blog" className="whitespace-nowrap text-[16px] leading-[1.25] text-text no-underline">
+                  {t.blog}
+                </Link>
+              </li>
+            )}
+          </ul>
 
-        <div className="hidden items-center gap-5 lg:flex">
-          <LanguageSwitcher />
-          <a
-            href={inscription}
-            data-cta-label="Connexion"
-            data-cta-position="header"
-            className="font-sans cursor-pointer whitespace-nowrap border-none bg-transparent text-[16px] font-normal text-text no-underline"
+          <div className="hidden items-center gap-5 lg:flex">
+            <LanguageSwitcher />
+            <a
+              href={inscription}
+              data-cta-label="Connexion"
+              data-cta-position="header"
+              className="font-sans cursor-pointer whitespace-nowrap border-none bg-transparent text-[16px] font-normal text-text no-underline"
+            >
+              {t.login}
+            </a>
+            <PillButton href={inscription} size="md" ctaLabel="Inscription" ctaPosition="header">
+              {t.cta}
+            </PillButton>
+          </div>
+
+          <button
+            className="p-2 text-text lg:hidden"
+            onClick={() => setOpen(!open)}
+            aria-label="Menu"
           >
-            {t.login}
-          </a>
-          <PillButton href={inscription} size="md" ctaLabel="Inscription" ctaPosition="header">
-            {t.cta}
-          </PillButton>
-        </div>
-
-        <button
-          className="p-2 text-text lg:hidden"
-          onClick={() => setOpen(!open)}
-          aria-label="Menu"
-        >
-          <span className="mb-1.5 block h-0.5 w-5 bg-current" />
-          <span className="mb-1.5 block h-0.5 w-5 bg-current" />
-          <span className="block h-0.5 w-5 bg-current" />
-        </button>
-      </Container>
+            <span className="mb-1.5 block h-0.5 w-5 bg-current" />
+            <span className="mb-1.5 block h-0.5 w-5 bg-current" />
+            <span className="block h-0.5 w-5 bg-current" />
+          </button>
+        </Container>
+      </div>
 
       {open && (
         <div
-          className="flex flex-col gap-4 border-t px-6 py-4 lg:hidden"
-          style={{ backgroundColor: "rgba(255,255,255,0.97)", borderColor: "#D9DBE0" }}
+          className="mx-auto mt-2 flex max-w-[1180px] flex-col gap-4 rounded-[28px] border px-6 py-4 shadow-float backdrop-blur-[16px] lg:hidden"
+          style={{ backgroundColor: "rgba(250,250,250,0.97)", borderColor: "#D9DBE0" }}
         >
           <Link
             href={`${home}#comment-ca-marche`}
